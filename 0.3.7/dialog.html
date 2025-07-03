@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Diálogos (Modales)</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.css">
+    
+    <style>
+
+    </style>
+</head>
+<body class="lucen-body">
+      
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Diálogos (Modales) -->
+        <section>
+            <h1 class="component-title">Diálogos (Modales)</h1>
+            <p class="lucen-subtitle">Componentes modales para mostrar contenido, formularios o información detallada.</p>
+            
+            <div class="dialog-examples">
+                <!-- Diálogo básico -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-window"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo Básico</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal simple con título, contenido y acciones</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diálogo con formulario -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-input-cursor-text"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo con Formulario</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal con campos de formulario para entrada de datos</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diálogo con datos -->                    
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-table"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo con Datos</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal para visualización detallada de registros</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#dataModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diálogo acrílico -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-brightness-high"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo Acrílico</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal con efecto de vidrio esmerilado </p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#acrylicModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Diálogo fullscreen -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-fullscreen"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo Fullscreen</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal que ocupa toda la pantalla</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>   
+
+                <!-- Diálogo con scroll -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-arrows-expand"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo con Scroll</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal con contenido desplazable</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#scrollableModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- Diálogo dividido -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-layout-split"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header ">
+                            <h3 class="lucen-title mt-0">Diálogo Dividido</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal con dos paneles separados</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#splitModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diálogo de confirmación -->
+                <div class="lucen-card">
+                    <div class="lucen-card-media lucen-bg-primary text-light">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <div >
+                        <div class="lucen-card-header">
+                            <h3 class="lucen-title mt-0">Diálogo de Confirmación</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <p class="small">Modal para confirmar acciones importantes</p>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <button class="lucen-btn lucen-btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+                                <span>Ver ejemplo</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Código de ejemplo -->
+            <div class="col-lg" style="margin-top: var(--lucen-spacing-xl);">
+                <h3>Implementación básica</h3>
+                <p>Ejemplo de cómo implementar un diálogo modal básico:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Botón para abrir el modal -->
+                    <button class="lucen-btn lucen-btn-primary" 
+                            onclick="lucenUI.showModal(&apos;#exampleModal&apos;)">
+                        Abrir Modal
+                    </button>
+                    
+                    <!-- Estructura del modal -->
+                    <div class="lucen-modal" id="exampleModal">
+                        <div class="lucen-modal-dialog">
+                            <div class="lucen-modal-header">
+                                <h1>Título del Modal</h1>
+                            </div>
+                            <div class="lucen-modal-body">
+                                <p>Contenido del modal aquí...</p>
+                            </div>
+                            <div class="lucen-modal-footer">
+                                <button class="lucen-btn" 
+                                        onclick="lucenUI.hideModal(&apos;#exampleModal&apos;)">
+                                    Cancelar
+                                </button>
+                                <button class="lucen-btn lucen-btn-primary">
+                                    Aceptar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+
+
+<!-- MODALES DE EJEMPLO -->
+
+<!-- Modal básico -->
+<div class="lucen-modal" id="basicModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Detalles del Usuario</h1>
+            <div class="lucen-modal-message">
+                Visualización de información detallada del usuario seleccionado.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <div class="row" style="gap: var(--lucen-spacing-lg);">
+                <div class="col-sm">
+                    <div class="lucen-avatar" style="width: 80px; height: 80px; font-size: 2rem;">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <h3>Nicolás Pérez</h3>
+                    <p class="text-muted">Usuario desde: 15/03/2022</p>
+                    
+                    <div style="margin-top: var(--lucen-spacing-md);">
+                        <p><strong>Email:</strong> nico@ejemplo.com</p>
+                        <p><strong>Teléfono:</strong> +54 11 1234-5678</p>
+                        <p><strong>Rol:</strong> Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#basicModal')">
+                Cerrar
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Editar Perfil
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal con formulario -->
+<div class="lucen-modal" id="formModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Nuevo Proyecto</h1>
+            <div class="lucen-modal-message">
+                Complete los campos para crear un nuevo proyecto.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <form class="form-modal-content">
+                <div class="lucen-form-group">
+                    <label class="lucen-label">Nombre del Proyecto</label>
+                    <input type="text" class="lucen-input" placeholder="Ingrese el nombre">
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label">Descripción</label>
+                    <textarea class="lucen-textarea" rows="3" placeholder="Describa el proyecto"></textarea>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label">Fecha de Inicio</label>
+                    <input type="date" class="lucen-input">
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label">Prioridad</label>
+                    <select class="lucen-select">
+                        <option>Baja</option>
+                        <option selected>Media</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-checkbox">
+                        <input type="checkbox"> Proyecto confidencial
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#formModal')">
+                Cancelar
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Guardar Proyecto
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal con datos -->
+<div class="lucen-modal" id="dataModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Registro de Actividades</h1>
+            <div class="lucen-modal-message">
+                Historial completo de actividades del usuario.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <div class="lucen-table-responsive">
+                <table class="data-grid">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Actividad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/06/2023</td>
+                            <td>Inicio de sesión</td>
+                            <td><span class="lucen-badge lucen-badge-success">Exitoso</span></td>
+                        </tr>
+                        <tr>
+                            <td>14/06/2023</td>
+                            <td>Edición de documento</td>
+                            <td><span class="lucen-badge lucen-badge-success">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>13/06/2023</td>
+                            <td>Intento de acceso</td>
+                            <td><span class="lucen-badge lucen-badge-danger">Fallido</span></td>
+                        </tr>
+                        <tr>
+                            <td>12/06/2023</td>
+                            <td>Descarga de archivo</td>
+                            <td><span class="lucen-badge lucen-badge-success">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>11/06/2023</td>
+                            <td>Cambio de contraseña</td>
+                            <td><span class="lucen-badge lucen-badge-warning">Pendiente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#dataModal')">
+                Cerrar
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Exportar Datos
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal acrílico -->
+<div class="lucen-modal" id="acrylicModal">
+    <div class="lucen-modal-dialog acrylic">
+        <div class="lucen-modal-header">
+            <h1>Configuración Avanzada</h1>
+            <div class="lucen-modal-message">
+                Ajustes especiales con efecto acrílico (Fluent Design).
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <div class="lucen-form-group">
+                <label class="lucen-label">Tema de la Aplicación</label>
+                <select class="lucen-select">
+                    <option>Claro</option>
+                    <option>Oscuro</option>
+                    <option>Automático</option>
+                </select>
+            </div>
+            
+            <div class="lucen-form-group">
+                <label class="lucen-label">Nivel de Transparencia</label>
+                <input type="range" class="lucen-input" min="0" max="100" value="60">
+            </div>
+            
+            <div class="lucen-form-group">
+                <label class="lucen-switch">
+                    <input type="checkbox" checked>
+                    <span>Efectos de Animación</span>
+                </label>
+            </div>
+        </div>
+        <div class="lucen-modal-footer acrylic">
+            <button class="lucen-btn lucen-btn-outline" onclick="lucenUI.hideModal('#acrylicModal')">
+                Cancelar
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Aplicar Cambios
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal fullscreen -->
+<div class="lucen-modal fullscreen-modal" id="fullscreenModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Editor de Documento</h1>
+            <div class="lucen-modal-message">
+                Edición completa del documento con todas las herramientas disponibles.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <div class="lucen-form-group">
+                <input type="text" class="lucen-input" placeholder="Título del documento" style="font-size: 1.5rem; font-weight: 600;">
+            </div>
+            
+            <div class="lucen-form-group">
+                <textarea class="lucen-textarea" rows="15" placeholder="Escribe tu contenido aquí..." style="min-height: 60vh;"></textarea>
+            </div>
+        </div>
+        <div class="lucen-modal-footer">
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <div>
+                    <button class="lucen-btn lucen-btn-icon">
+                        <i class="bi bi-save"></i>
+                    </button>
+                    <button class="lucen-btn lucen-btn-icon">
+                        <i class="bi bi-printer"></i>
+                    </button>
+                    <button class="lucen-btn lucen-btn-icon">
+                        <i class="bi bi-share"></i>
+                    </button>
+                </div>
+                <div>
+                    <button class="lucen-btn" onclick="lucenUI.hideModal('#fullscreenModal')">
+                        Cerrar
+                    </button>
+                    <button class="lucen-btn lucen-btn-primary">
+                        Publicar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal con scroll -->
+<div class="lucen-modal scrollable-modal" id="scrollableModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Términos y Condiciones</h1>
+            <div class="lucen-modal-message">
+                Por favor lea atentamente los siguientes términos antes de continuar.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <h3>1. Introducción</h3>
+            <p>Estos términos y condiciones regulan el uso de este sitio web. Al acceder a este sitio web, usted acepta estos términos y condiciones en su totalidad.</p>
+            
+            <h3>2. Licencia para usar el sitio web</h3>
+            <p>A menos que se indique lo contrario, nosotros o nuestros licenciantes poseemos los derechos de propiedad intelectual del sitio web y del material en el sitio web.</p>
+            
+            <h3>3. Aceptable uso</h3>
+            <p>No debe usar este sitio web de ninguna manera que cause, o pueda causar, daño al sitio web o deterioro de la disponibilidad o accesibilidad del sitio web.</p>
+            
+            <h3>4. Limitaciones de responsabilidad</h3>
+            <p>Nosotros no seremos responsables de ninguna pérdida que surja de conexiones o transacciones electrónicas que contengan virus u otros componentes destructivos.</p>
+            
+            <h3>5. Variaciones</h3>
+            <p>Podemos revisar estos términos y condiciones de vez en cuando. Los términos y condiciones revisados se aplicarán al uso de este sitio web desde la fecha de publicación.</p>
+            
+            <h3>6. Ley aplicable y jurisdicción</h3>
+            <p>Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de Argentina, y cualquier disputa relacionada con estos términos y condiciones estará sujeta a la jurisdicción exclusiva de los tribunales de Argentina.</p>
+            
+            <h3>7. Nuestros detalles</h3>
+            <p>El nombre completo de nuestra empresa es lucen Design S.A. Nuestra dirección es Av. Corrientes 1234, Buenos Aires, Argentina.</p>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#scrollableModal')">
+                No Acepto
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Acepto los Términos
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal dividido -->
+<div class="lucen-modal split-modal" id="splitModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Comparación de Productos</h1>
+            <div class="lucen-modal-message">
+                Detalle comparativo entre dos versiones del producto.
+            </div>
+        </div>
+        <div class="lucen-modal-body">
+            <div class="split-left">
+                <h3>Versión Estándar</h3>
+                <ul>
+                    <li>Soporte básico</li>
+                    <li>5 usuarios</li>
+                    <li>10GB almacenamiento</li>
+                    <li>Actualizaciones mensuales</li>
+                </ul>
+                <h4 style="margin-top: var(--lucen-spacing-lg);">$99/mes</h4>
+            </div>
+            <div class="split-right">
+                <h3>Versión Premium</h3>
+                <ul>
+                    <li>Soporte prioritario 24/7</li>
+                    <li>Usuarios ilimitados</li>
+                    <li>100GB almacenamiento</li>
+                    <li>Actualizaciones semanales</li>
+                    <li>Acceso anticipado a nuevas funciones</li>
+                </ul>
+                <h4 style="margin-top: var(--lucen-spacing-lg);">$199/mes</h4>
+            </div>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#splitModal')">
+                Cerrar
+            </button>
+            <button class="lucen-btn lucen-btn-primary">
+                Seleccionar Premium
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="lucen-modal confirmation-modal" id="confirmationModal">
+    <div class="lucen-modal-dialog">
+        <div class="lucen-modal-header">
+            <h1>Confirmar Acción</h1>
+        </div>
+        <div class="lucen-modal-body">
+            <i class="bi bi-exclamation-triangle" style="font-size: 3rem; color: var(--lucen-warning);"></i>
+            <h3 style="margin-top: var(--lucen-spacing-md);">¿Está seguro que desea eliminar este registro?</h3>
+            <p>Esta acción no se puede deshacer. Todos los datos asociados serán eliminados permanentemente.</p>
+        </div>
+        <div class="lucen-modal-footer">
+            <button class="lucen-btn" onclick="lucenUI.hideModal('#confirmationModal')">
+                Cancelar
+            </button>
+            <button class="lucen-btn lucen-btn-danger">
+                Eliminar Permanentemente
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+    <script src="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script>
+    // Inicialización de componentes
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+        
+        // Optimización para touch
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            document.querySelectorAll('.lucen-modal-footer .lucen-btn').forEach(btn => {
+                btn.style.padding = 'var(--lucen-spacing-md) var(--lucen-spacing-lg)';
+                btn.style.minHeight = '48px';
+            });
+        }
+    });
+    
+    // Función para mostrar toast de ejemplo
+    function showSuccessToast() {
+        lucenUI.showToast('Operación completada con éxito', 'success');
+    }
+    
+    function showErrorToast() {
+        lucenUI.showToast('Error al procesar la solicitud', 'error');
+    }
+</script>
+    
+</body> 
+</html>

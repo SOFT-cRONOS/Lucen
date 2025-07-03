@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Hero Banners</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.css">
+    <style>
+
+        .lucen-hero-slider {
+            background-image: url(assets/lucen-background.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="lucen-body">
+      
+<div class="lucen-container col flex-centered">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main col">
+        <h1 class="component-title">Hero Banners</h1>
+        
+        <!-- Hero 1: Minimalista con gradiente -->
+        <section class="mb-3">
+            <h2>Hero Minimalista</h2>
+            <div class="lucen-hero minimal-hero gradient-primary">
+                <div class="lucen-hero-content">
+                    <h1 class="lucen-hero-title">Diseño Moderno y Minimalista</h1>
+                    <p class="lucen-hero-subtitle">Crea experiencias de usuario excepcionales con nuestro framework</p>
+                    <div class="lucen-hero-actions">
+                        <button class="lucen-btn lucen-btn-primary">
+                            <span>Empezar</span>
+                        </button>
+                        <button class="lucen-btn lucen-btn-outline">
+                            <span>Saber más</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <div class="lucen-hero minimal-hero gradient-primary">
+                    <div class="lucen-hero-content">
+                        <h1 class="lucen-hero-title">Diseño Moderno y Minimalista</h1>
+                        <p class="lucen-hero-subtitle">Crea experiencias de usuario excepcionales con nuestro framework</p>
+                        <div class="lucen-hero-actions">
+                            <button class="lucen-btn lucen-btn-primary">
+                                <span>Empezar</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-outline">
+                                <span>Saber más</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </section>
+        
+        <!-- Hero 2: Con imagen de fondo -->
+        <section class="mb-3">
+            <h2>Hero con Imagen</h2>
+            <div class="lucen-hero image-hero" style="background-image: url('assets/lucen-background.webp');">
+                <div class="lucen-hero-overlay"></div>
+                <div class="lucen-hero-content">
+                    <h1 class="lucen-hero-title">Potencia tu Desarrollo Web</h1>
+                    <p class="lucen-hero-subtitle">Componentes listos para usar basados en Fluent Design</p>
+                    <div class="lucen-hero-actions">
+                        <button class="lucen-btn lucen-btn-primary">
+                            <i class="bi bi-download"></i>
+                            <span>Descargar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <div class="lucen-hero image-hero" style="background-image: url(&apos;path/to/image.jpg&apos;);">
+                    <div class="lucen-hero-overlay"></div>
+                    <div class="lucen-hero-content">
+                        <h1 class="lucen-hero-title">Potencia tu Desarrollo Web</h1>
+                        <p class="lucen-hero-subtitle">Componentes listos para usar basados en Fluent Design</p>
+                        <div class="lucen-hero-actions">
+                            <button class="lucen-btn lucen-btn-primary">
+                                <i class="bi bi-download"></i>
+                                <span>Descargar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </section>
+        
+        <!-- Hero 3: Slider con múltiples diapositivas -->
+        <section class="mb-3">
+            <h2>Hero Slider</h2>
+            <div class="lucen-hero-slider" data-autoplay="true" data-interval="5000" data-transition-speed="300" data-loop="true">
+                <!-- Slide 1 -->
+                <div class="lucen-hero-slide active acrylic-md">
+                    <div class="lucen-hero-content">
+                        <h1 class="lucen-hero-title">Nueva Versión 2.0</h1>
+                        <p class="lucen-hero-subtitle">Descubre todas las nuevas características</p>
+                        <button class="lucen-btn lucen-btn-primary">
+                            <span>Ver novedades</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="lucen-hero-slide acrylic-md">
+                    <div class="lucen-hero-content">
+                        <h1 class="lucen-hero-title">Documentación Completa</h1>
+                        <p class="lucen-hero-subtitle">Aprende a usar todos los componentes</p>
+                        <button class="lucen-btn lucen-btn-outline">
+                            <span>Ir a documentación</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="lucen-hero-slide acrylic-md">
+                    <div class="lucen-hero-content">
+                        <h1 class="lucen-hero-title">Soporte 24/7</h1>
+                        <p class="lucen-hero-subtitle">Nuestro equipo está para ayudarte</p>
+                        <button class="lucen-btn lucen-btn-primary">
+                            <span>Contactar soporte</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Controles del slider -->
+                <div class="lucen-hero-slider-controls">
+                    <button class="lucen-btn lucen-btn-icon slider-prev noback">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="lucen-btn lucen-btn-icon slider-next noback">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <div class="lucen-hero-slider">
+                    <!-- Slide 1 -->
+                    <div class="lucen-hero-slide active acrylic-md">
+                        <div class="lucen-hero-content">
+                            <h1 class="lucen-hero-title">Nueva Versión 2.0</h1>
+                            <p class="lucen-hero-subtitle">Descubre todas las nuevas características</p>
+                            <button class="lucen-btn lucen-btn-primary">
+                                <span>Ver novedades</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="lucen-hero-slide acrylic-md">
+                        <div class="lucen-hero-content">
+                            <h1 class="lucen-hero-title">Documentación Completa</h1>
+                            <p class="lucen-hero-subtitle">Aprende a usar todos los componentes</p>
+                            <button class="lucen-btn lucen-btn-outline">
+                                <span>Ir a documentación</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles del slider -->
+                    <div class="lucen-hero-slider-controls">
+                        <button class="lucen-btn lucen-btn-icon slider-prev">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <div class="slider-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="lucen-btn lucen-btn-icon slider-next">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+        
+</div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+    <script src="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Configuración mediante data attributes:
+    // data-autoplay: "true" o "false" (default: true)
+
+    // data-interval: milisegundos entre slides (default: 5000)
+
+    // data-transition-speed: duración de la transición en ms (default: 300)
+
+    // data-loop: "true" o "false" (default: true)
+
+    // Configurar un slider específico después de la inicialización
+    // lucenUI.configSlider('.mi-slider', {
+    //     autoplay: false,
+    //     interval: 3000,
+    //     transitionSpeed: 500,
+    //     loop: false
+    // });
+
+    hljs.highlightAll();
+    styeCode();
+});
+</script>
+    
+</body> 
+</html>

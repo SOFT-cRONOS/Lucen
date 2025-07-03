@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Lucen UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.css">
+  <style>
+     :root {
+      --footer-height: 48px;
+    }
+ 
+    html, body {
+      /* margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column; */
+       background:         linear-gradient(
+            to bottom,
+            rgba(var(--lucen-background-primary-rgb), 0.3),
+            rgba(var(--lucen-background-primary-rgb), 0.1)
+         ),
+        url('assets/lucen-background.webp') center/cover no-repeat;
+    }
+
+
+
+    /* footer {
+      height: var(--footer-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--lucen-text-tertiary);
+      padding-top: var(--lucen-spacing-sm);
+      background: transparent;
+    } */
+
+  </style>
+</head>
+<body class="lucen-body full-display flex-centered">
+  <main class="lucen-main flex-centered">
+    <div class="lucen-card nomov lucen-p-xxl acrylic-sf">
+      <div class="login-header">
+        <div class="row">
+          <div class="col col-sm flex-centered">
+              <img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png" alt="Logo">
+          </div>
+          <div class="col flex-centered">
+              <h2>Iniciar sesión</h2>
+              <p>Accedé a tu cuenta</p>
+          </div>
+        </div>
+      </div>
+      <form class="lucen-form">
+        <div class="lucen-form-group">
+          <label class="lucen-label" for="left-icon-input">Icono a la izquierda</label>
+          <div class="input-with-icon">
+              <i class="bi bi-person left"></i>
+              <input type="text" class="lucen-input" id="left-icon-input" placeholder="tucorreo@dominio.com">
+          </div>
+        </div>
+      
+        <div class="lucen-form-group">
+          <label class="lucen-label" for="password">Contraseña</label>
+          <input type="password" id="password" class="lucen-input " required>
+        </div>
+        <button type="submit" class="lucen-btn lucen-btn-primary"><span>Ingresar</span></button>
+      </form>
+      
+      <div class="login-footer">
+        ¿No tenés cuenta? <a href="#" class="lucen-text-secondary">Registrate</a>
+      </div>
+    </div>
+  </main>
+  <footer class="lucen-footer">
+    <div class="lucen-footer-content">
+      <p class="lucen-footer-copyright">© 2025 Título APP · Desarrollado por 
+        <a href="https://softcronos.com.ar/" target="_blank" rel="noopener">Softcronos</a> · v1.0.0</p>
+    </div>
+    
+  </footer>
+
+<!-- lucen UI JS -->
+    <script src="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.js"></script>
+
+</body>
+</html>

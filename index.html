@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Documentación - Lucen UI</title>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.css">
+    
+    <style>
+        .version-portal {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .version-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .version-btn {
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .version-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="lucen-body gradient-background">
+
+    <main class="lucen-main">
+        <div class="version-portal text-center">
+            <img src="assets/lucen-logo-color-big.webp" alt="Lucen UI Logo" width="100" height="auto">
+            <h1 class="lucen-title big mt-3">Portal de Documentación</h1>
+            <p class="lucen-subtitle medium">Selecciona la versión que deseas consultar</p>
+            
+            <div class="version-options">
+                <div class="lucen-card acrylic-md version-btn" data-version="0.3.7">
+                    <div class="lucen-card-body">
+                        <h3 class="lucen-title">Versión 0.3.7</h3>
+                        <p class="micro">Estable - Última release</p>
+                        <i class="bi bi-stars gradient-icon" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+                
+                <!-- <div class="lucen-card acrylic-md version-btn" data-version="0.4.3512">
+                    <div class="lucen-card-body">
+                        <h3 class="lucen-title">Versión 0.4.3512</h3>
+                        <p class="micro">Anterior - Estable</p>
+                        <i class="bi bi-archive gradient-icon" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+                
+                <div class="lucen-card acrylic-md version-btn" data-version="dev">
+                    <div class="lucen-card-body">
+                        <h3 class="lucen-title">Versión Dev</h3>
+                        <p class="micro">En desarrollo - Inestable</p>
+                        <i class="bi bi-code-slash gradient-icon" style="font-size: 2rem;"></i>
+                    </div>
+                </div> -->
+            </div>
+            
+            <div class="lucen-card transparent mt-4">
+                <div class="lucen-card-body">
+                    <h3 class="lucen-title small">¿Qué es Lucen UI?</h3>
+                    <p>Lucen es un framework de interfaz de usuario minimalista que proporciona componentes y herramientas para construir aplicaciones web modernas con un diseño limpio y consistente.</p>
+                    <p class="mt-3">Incluye componentes personalizables, utilidades CSS y patrones de diseño listos para usar en tus proyectos.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="lucen-footer">
+        <div class="lucen-footer-content">
+            <p class="lucen-brand">Lucen UI</p>
+            <p class="lucen-footer-copyright">Un proyecto de <a href="https://softcronos.com.ar/" target="_blank" rel="noopener">Softcronos</a> · © 2025</p>
+        </div>
+    </footer>
+
+    <!-- lucen UI JS -->
+    <script src="https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Manejar clic en las versiones
+            document.querySelectorAll('.version-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const version = this.getAttribute('data-version');
+                    
+                    // Redirigir a la documentación correspondiente
+                    if(version === 'dev') {
+                        // Versión de desarrollo (podría ser un branch diferente)
+                        window.location.href = 'https://github.com/SOFT-cRONOS/Lucen/tree/Dev';
+                    } else {
+                        // Versiones estables (tags/releases)
+                        window.location.href = `/${version}/home.html`;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
