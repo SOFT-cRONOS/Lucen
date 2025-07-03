@@ -1,0 +1,121 @@
+@use 'variables' as *;
+
+.lucen-input, .lucen-select, .lucen-textarea {
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  border: 1px solid $lucen-border-color;
+  border-radius: $lucen-border-radius;
+  background-color: $lucen-background-primary;
+  transition: $lucen-transition;
+  font-size: 0.875rem;
+  color: $lucen-text-primary;
+}
+
+.lucen-input {
+  &:hover {
+    border-color: $lucen-primary-light;
+    border: 1px solid $lucen-border-color;
+    border-bottom: 1px solid $lucen-primary;
+  }
+
+  &:focus, &.is-invalid, &.is-valid {
+    outline: none;
+    box-shadow: $lucen-shadow-sm;
+  }
+
+  &:focus {
+    border-color: $lucen-primary;
+  }
+
+  &.is-invalid {
+    border-color: $lucen-danger;
+  }
+
+  &.is-valid {
+    border-color: $lucen-success;
+  }
+}
+
+.lucen-select, .lucen-textarea {
+  &:focus {
+    outline: none;
+    border-color: $lucen-primary;
+    box-shadow: $lucen-shadow-sm;
+  }
+
+  &.is-invalid {
+    border-color: $lucen-danger;
+  }
+
+  &.is-valid {
+    border-color: $lucen-success;
+  }
+}
+
+// Input con icono
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  i {
+    position: absolute;
+    color: $lucen-text-tertiary;
+    z-index: 2;
+
+    &.left {
+      left: 12px;
+    }
+
+    &.right {
+      right: 12px;
+    }
+  }
+
+  .lucen-input {
+    padding-left: 40px;
+    width: 100%;
+
+    &.right-icon {
+      padding-left: 12px;
+      padding-right: 40px;
+    }
+  }
+}
+
+// Input con botón
+.input-with-button {
+  display: flex;
+  gap: 8px;
+
+  .lucen-input {
+    flex: 1;
+  }
+}
+
+.lucen-invalid-feedback {
+  color: $lucen-danger;
+  font-size: 0.75rem;
+}
+
+.lucen-valid-feedback {
+  color: $lucen-success;
+  font-size: 0.75rem;
+}
+
+.lucen-select option:hover {
+  background-color: #ccc !important;
+  color: #000;
+}
+
+.custom-options {
+  background: $lucen-background-dark;
+}
+
+.custom-option {
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: $lucen-background-dark;
+  }
+}

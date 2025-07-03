@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Tablas</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+ 
+    </style>
+</head>
+<body class="lucen-body">
+      
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        <!-- Sección de Tablas -->
+        <section class="">
+            <h1 class="component-title">Tablas</h1>
+            
+            <!-- Tabla básica -->
+            <div class="demo-container">
+                <h3>Tabla Básica</h3>
+                <div class="lucen-table-responsive">
+                    <table class="lucen-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Juan Pérez</td>
+                                <td>juan@example.com</td>
+                                <td><span class="lucen-badge lucen-badge-success">Activo</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>María Gómez</td>
+                                <td>maria@example.com</td>
+                                <td><span class="lucen-badge lucen-badge-success">Activo</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Carlos López</td>
+                                <td>carlos@example.com</td>
+                                <td><span class="lucen-badge lucen-badge-warning">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Ana Rodríguez</td>
+                                <td>ana@example.com</td>
+                                <td><span class="lucen-badge lucen-badge-danger">Inactivo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <div class="lucen-table-responsive">
+                        <table class="lucen-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Juan Pérez</td>
+                                    <td>juan@example.com</td>
+                                    <td><span class="lucen-badge lucen-badge-success">Activo</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>María Gómez</td>
+                                    <td>maria@example.com</td>
+                                    <td><span class="lucen-badge lucen-badge-success">Activo</span></td>
+                                </tr>
+                                <!-- Más filas... -->
+                            </tbody>
+                        </table>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Tabla con rayas -->
+            <div class="demo-container">
+                <h3>Tabla con Rayas</h3>
+                <div class="lucen-table-responsive">
+                    <table class="lucen-table lucen-table-striped">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Laptop</td>
+                                <td>$1,200</td>
+                                <td>15</td>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <td>Teléfono</td>
+                                <td>$800</td>
+                                <td>32</td>
+                                <td>245</td>
+                            </tr>
+                            <tr>
+                                <td>Tablet</td>
+                                <td>$450</td>
+                                <td>12</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>Monitor</td>
+                                <td>$350</td>
+                                <td>8</td>
+                                <td>42</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <div class="lucen-table-responsive">
+                        <table class="lucen-table lucen-table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Ventas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Laptop</td>
+                                    <td>$1,200</td>
+                                    <td>15</td>
+                                    <td>120</td>
+                                </tr>
+                                <!-- Más filas... -->
+                            </tbody>
+                        </table>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Tabla con bordes -->
+            <div class="demo-container">
+                <h3>Tabla con Bordes</h3>
+                <div class="lucen-table-responsive">
+                    <table class="lucen-table lucen-table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Ciudad</th>
+                                <th>País</th>
+                                <th>Población</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Buenos Aires</td>
+                                <td>Argentina</td>
+                                <td>15,370,000</td>
+                            </tr>
+                            <tr>
+                                <td>Santiago</td>
+                                <td>Chile</td>
+                                <td>7,112,000</td>
+                            </tr>
+                            <tr>
+                                <td>Lima</td>
+                                <td>Perú</td>
+                                <td>9,752,000</td>
+                            </tr>
+                            <tr>
+                                <td>Bogotá</td>
+                                <td>Colombia</td>
+                                <td>7,963,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <div class="lucen-table-responsive">
+                        <table class="lucen-table lucen-table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Ciudad</th>
+                                    <th>País</th>
+                                    <th>Población</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Buenos Aires</td>
+                                    <td>Argentina</td>
+                                    <td>15,370,000</td>
+                                </tr>
+                                <!-- Más filas... -->
+                            </tbody>
+                        </table>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+
+            <!-- Tabla con paginación numérica -->
+            <div class="demo-container">
+                <h3>Tabla con Paginación</h3>
+                <!-- Tabla básica con paginación simple -->
+                <div class="lucen-table-responsive" data-lucen-pagination="myTable">
+                    <table class="lucen-table" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable-content">
+                            <!-- contenido de la tabla -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabla con paginación numérica y configuración personalizada -->
+                <div class="lucen-table-responsive" 
+                    data-lucen-pagination="numericTable"
+                    data-numeric="true"
+                    data-rows-per-page="4"
+                    data-max-pages="7"
+                    data-show-info="false">
+                    <table class="lucen-table" id="numericTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="numericTable-content">
+                                <!-- contenido de la tabla -->
+                            </tbody>
+                    </table>
+                </div>
+
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                <!-- Tabla básica con paginación simple -->
+                <div class="lucen-table-responsive" data-lucen-pagination="myTable">
+                    <table class="lucen-table" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTable-content">
+                            <!-- contenido de la tabla -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tabla con paginación numérica y configuración personalizada -->
+                <div class="lucen-table-responsive" 
+                    data-lucen-pagination="numericTable"
+                    data-numeric="true"
+                    data-rows-per-page="4"
+                    data-max-pages="7"
+                    data-show-info="false">
+                    <table class="lucen-table" id="numericTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="numericTable-content">
+                                <!-- contenido de la tabla -->
+                            </tbody>
+                    </table>
+                </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+        
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+<script>
+    // Datos de ejemplo para la tabla con paginación
+    const orders = [
+        {id: 1, cliente: "Juan Pérez", fecha: "2023-05-15", total: "$150.00", estado: "Completado"},
+        {id: 2, cliente: "María Gómez", fecha: "2023-05-16", total: "$230.50", estado: "En proceso"},
+        {id: 3, cliente: "Carlos López", fecha: "2023-05-17", total: "$75.25", estado: "Cancelado"},
+        {id: 4, cliente: "Ana Rodríguez", fecha: "2023-05-18", total: "$420.00", estado: "Completado"},
+        {id: 5, cliente: "Pedro Sánchez", fecha: "2023-05-19", total: "$89.99", estado: "En proceso"},
+        {id: 6, cliente: "Laura Martínez", fecha: "2023-05-20", total: "$156.75", estado: "Completado"},
+        {id: 7, cliente: "Miguel Díaz", fecha: "2023-05-21", total: "$210.50", estado: "En proceso"},
+        {id: 8, cliente: "Sofía Ruiz", fecha: "2023-05-22", total: "$345.00", estado: "Completado"},
+        {id: 9, cliente: "Daniel Castro", fecha: "2023-05-23", total: "$99.99", estado: "Cancelado"},
+        {id: 10, cliente: "Elena Vargas", fecha: "2023-05-24", total: "$175.25", estado: "Completado"},
+        {id: 11, cliente: "Roberto Jiménez", fecha: "2023-05-25", total: "$230.00", estado: "En proceso"},
+        {id: 12, cliente: "Patricia Herrera", fecha: "2023-05-26", total: "$85.50", estado: "Completado"}
+    ];
+    
+    function fullTable() {
+        const tableBody = document.getElementById("myTable-content");
+        tableBody.innerHTML = "";
+        orders.forEach(order => {
+            const row = document.createElement("tr");
+            
+            row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${order.cliente}</td>
+                <td>${order.fecha}</td>
+                <td>${order.total}</td>
+                <td>
+                    <span class="lucen-badge ${order.estado === "Completado" ? "lucen-badge-success" : 
+                                              order.estado === "En proceso" ? "lucen-badge-warning" : 
+                                              "lucen-badge-danger"}">
+                        ${order.estado}
+                    </span>
+                </td>
+            `;
+            
+            tableBody.appendChild(row);
+        });
+    }
+    function fullTable2() {
+        const tableBody = document.getElementById("numericTable-content");
+        tableBody.innerHTML = "";
+        orders.forEach(order => {
+            const row = document.createElement("tr");
+            
+            row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${order.cliente}</td>
+                <td>${order.fecha}</td>
+                <td>${order.total}</td>
+                <td>
+                    <a href="#${order.id}" class="lucen-btn">
+                        <i class="bi bi-eye-fill"></i>
+                        <span>Ver</span>
+                    </a>
+                </td>
+            `;
+            
+            tableBody.appendChild(row);
+        });
+    }
+    fullTable()
+    fullTable2()
+</script>
+
+<!-- lucen UI JS -->
+<script src="js/lucen-ui.js"></script>
+
+<script>
+    // Inicializar el resaltado de código
+    document.addEventListener('DOMContentLoaded', () => {
+        styeCode();
+        hljs.highlightAll();
+    });
+</script>
+
+
+
+</body> 
+</html>

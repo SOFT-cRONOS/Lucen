@@ -1,0 +1,218 @@
+@use 'variables' as *;
+
+// Tarjetas
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $lucen-spacing-lg;
+  margin-bottom: $lucen-spacing-lg;
+  grid-auto-rows: 1fr;
+}
+       
+.cards-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: $lucen-spacing-md;
+    padding-bottom: $lucen-spacing-md;
+    scrollbar-width: thin;
+}
+
+.cards-slider .lucen-card {
+    min-width: 280px;
+    flex-shrink: 0;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: $lucen-spacing-md;
+    background: linear-gradient(to bottom right, $lucen-primary, $lucen-primary-light);
+    -webkit-background-clip: text; /* Corta el fondo según el texto */
+    background-clip: text;  
+    color: transparent; /* Hacemos el color del texto transparente para que se vea el gradiente */
+    display: inline-block; /* Necesario para que funcione */
+}
+
+.card-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $lucen-spacing-md;
+}
+
+.card-stats .stat {
+    display: flex;
+    align-items: center;
+    gap: $lucen-spacing-xs;
+    font-size: 0.875rem;
+    color: $lucen-text-secondary;
+}
+
+.lucen-card {
+  background-color: $lucen-background-primary;
+  border-radius: $lucen-border-radius-lg;
+  box-shadow: $lucen-shadow-sm;
+  transition: $lucen-transition;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: $lucen-shadow-md;
+    transform: translateY(-2px);
+  }
+
+  &.nomov:hover {
+    transform: none;
+  }
+}
+
+.lucen-card-header {
+  padding: $lucen-spacing-md;
+  padding-bottom: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+
+  &-image {
+    padding: 0;
+    border-bottom: none;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+
+    img {
+      width: 100%;
+      height: 200px;
+      display: block;
+    }
+  }
+
+  &-image.md-image {
+    max-height: 160px;;
+    overflow: hidden;
+  }
+
+    &-image.sm-image {
+    max-height: 120px;
+    overflow: hidden;
+  }
+}
+
+.lucen-card-body {
+  padding: 0 $lucen-spacing-md;
+  flex-grow: 1;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+   .lucen-title{
+     margin-top:0;
+   }
+}
+
+.lucen-card-footer {
+  padding: 0 $lucen-spacing-md $lucen-spacing-md $lucen-spacing-md;
+  // background-color: $lucen-background-primary;
+  color: $lucen-text-secondary;
+  font-size: 0.9rem;
+}
+
+.lucen-card-primary .lucen-card-header {
+  background-color: $lucen-primary;
+  color: $lucen-text-white;
+
+  & .lucen-title{
+     margin-top:0;
+   }
+}
+
+.card-bordered {
+    position: relative;
+    overflow: hidden; /* Para asegurar que los bordes redondeados del pseudo-elemento se vean correctamente */
+}
+
+.card-bordered::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background: linear-gradient(to bottom right, $lucen-primary, $lucen-primary-light);
+    border-radius: 2px;
+}
+
+
+.card-dynamic {
+  position: relative;
+  min-height: 300px;
+
+  // Gradient por defecto (fallback si JS no carga)
+
+
+  .card-dynamic-content {
+    z-index: 1;
+    margin-top: auto; // ¡Clave! Empuja el contenido hacia abajo
+    padding: $lucen-spacing-lg; // Añadido para espaciado
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .lucen-btn-white {
+    background-color: rgba($lucen-text-white, 0.2);
+    border: 1px solid $lucen-text-white;
+    backdrop-filter: blur(5px);
+  }
+}
+
+
+
+.blured-content {
+  backdrop-filter: blur(5px) !important;
+  opacity: 0;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
+
+
+/* Clase para la columna de imagen/icono */
+.lucen-card-media {
+    
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 $lucen-spacing-md;
+    overflow: hidden;
+
+    & i {
+      max-width: 80px;
+    }
+
+    & img {
+      height: 100%;
+      object-fit: cover
+    }
+
+    & i {
+      font-size: 3.5rem;
+      color: $lucen-primary-light;
+    }
+
+}
+
+.notification-card {
+
+  & .lucen-card-media i {
+    font-size: 1.2rem;
+  }
+  
+  & .lucen-card-body p, & .lucen-card-body h4 {
+    margin:0;
+  }
+
+}

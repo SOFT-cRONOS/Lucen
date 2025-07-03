@@ -1,0 +1,616 @@
+@use 'variables' as *;
+
+//Seccion de: 
+//  - NavBar
+//  - Sidebar
+
+
+//**************************************
+//** Navbar - Barra navegador superior
+//**************************************
+.lucen-navbar {
+  position: sticky;
+  top: 0;
+  width: 60%;
+  z-index: 999;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $lucen-background-primary;
+  border-bottom: 1px solid $lucen-border-color;
+  padding: 0 $lucen-spacing-md;
+  box-shadow: $lucen-shadow-md;
+  margin-left: calc(100vh - 250px);
+  margin-top: 1rem;
+
+  &-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: $lucen-spacing-sm;
+  }
+
+  &-brand {
+    display: flex;
+    align-items: center;
+    color: $lucen-text-primary;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-right: $lucen-spacing-lg;
+  
+    i {
+      margin-right: $lucen-spacing-sm;
+      color: $lucen-primary;
+    }
+  }
+
+  &-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: $lucen-background-secondary;
+    border-radius: $lucen-border-radius;
+    padding: 6px 12px;
+    color: $lucen-text-secondary;
+    width: 100%;
+    max-width: 400px;
+  
+    i {
+      position: absolute;
+      left: $lucen-spacing-sm;
+      color: $lucen-text-tertiary;
+    }
+  
+    input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: $lucen-text-primary;
+      width: 100%;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: $lucen-spacing-sm;
+  }
+}
+
+
+//**************************************
+//** Sidebar - Barra menu izquierda
+//**************************************
+.lucen-sidebar {
+  width: 250px;
+  background-color: $lucen-background-primary;
+  border-right: 1px solid $lucen-border-color;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  transition: $lucen-transition;
+  overflow-x: auto;
+  box-shadow: $lucen-shadow-sm;
+
+  &.collapsed {
+    width: 60px;
+
+    .lucen-nav-link span,
+    .lucen-sidebar-header h3,
+    h4 {
+      display: none;
+    }
+
+    .lucen-nav-link {
+      justify-content: center;
+      
+      i {
+        margin-right: 0;
+      }
+    }
+
+    .lucen-nav-submenu {
+      padding: 0;
+    }
+
+    .lucen-nav-link {
+      width: auto;
+    }
+
+  }
+
+  &-header {
+    padding: $lucen-spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 45px;
+  
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  }
+
+  &-cat {
+    h4 {
+      text-align: start;
+      margin-left: .5rem;
+      margin-bottom: 0;
+    }
+  
+    .lucen-separator {
+      width: 80%;
+      height: 1px;
+      margin: 10px 10px 10px 10px;
+      background: $lucen-background-quaternary;
+    }
+  }
+}
+
+.lucen-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &-item {
+    margin: $lucen-spacing-xs $lucen-spacing-md;
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    padding: $lucen-spacing-sm $lucen-spacing-md;
+    color: $lucen-text-primary;
+    text-decoration: none;
+    border-radius: $lucen-border-radius;
+    transition: $lucen-transition;
+  
+  
+    border: none;
+    width: 100%;
+    text-align: start;
+    background-color: transparent;
+  
+    i {
+      margin-right: $lucen-spacing-sm;
+      color: $lucen-text-secondary;
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+  
+    span {
+      flex: 1;
+    }
+  
+    &:hover {
+      background-color: $lucen-background-tertiary;
+    }
+  
+    &.active {
+      background-color: $lucen-background-tertiary;
+      font-weight: 500;
+      border-left-color: $lucen-primary;
+      border-left-style: solid;
+    }
+  
+  }
+
+  &-arrow {
+    margin-left: auto;
+    transition: $lucen-transition;
+  
+    &.rotate {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &-submenu {
+    height: 0;
+    overflow: hidden;
+    padding-left: calc($lucen-spacing-md + 20px);
+    margin: 0;
+    transition: height 243ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    list-style: none;
+  
+    &.show {
+      padding-top: $lucen-spacing-xs;
+      padding-bottom: $lucen-spacing-xs;
+    }
+  
+    .lucen-nav-link {
+      padding: $lucen-spacing-xs $lucen-spacing-md;
+      font-size: 0.9rem;
+    }
+  }
+
+
+}
+
+.lucen-nav-link[aria-expanded="true"] .lucen-nav-arrow {
+  transform: rotate(180deg);
+}
+
+.st-app-main.sidebar-collapsed  {
+  margin-left: 60px;
+}
+
+
+
+//**************************
+//** Widget bar on right
+//**************************
+.lucen-widgetbar {
+  width: 190px;
+  background-color: $lucen-background-secondary;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 800;
+  transition: $lucen-transition;
+  // overflow-y: auto;
+
+  /* borde izquierdo */
+  &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background-color: $lucen-background-primary;
+  }
+
+ #widgetbarCollapse {
+      position: absolute;
+      top: 50%;
+      right: 190px;
+  }
+
+  &.collapsed {
+      width: 0px;
+      /* transform: translateX(130px); */
+
+      #widgetbarCollapse {
+          right: 5px;
+      }
+
+      .lucen-widgetbar-header h3, 
+      .lucen-widget {
+          display: none;
+      }
+
+      .lucen-widgetbar-header {
+          justify-content: center;
+      }
+  }
+
+  &-header {
+      padding: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 45px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+      }
+
+  }
+
+  &-content {
+      padding: 11px;
+  }
+}
+
+
+.lucen-widget {
+  background-color: $lucen-background-secondary;
+  border-radius: 8px;
+  margin-bottom: 11px;
+  overflow: hidden;
+
+  &-header {
+      padding: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $lucen-background-tertiary;
+
+      h4 {
+          margin: 0;
+          font-size: 0.9rem;
+      }
+
+  }
+
+  &-body {
+      padding: 11px;
+      font-size: 0.875rem;
+  }
+
+}
+
+
+.st-app-main.widgetbar-collapsed  {
+  margin-right: 60px!important;
+}
+
+.st-app-main.sidebar-collapsed.widgetbar-collapsed  {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .lucen-widgetbar {
+      transform: translateX(0);
+  }
+  
+  .lucen-widgetbar:not(.collapsed) {
+      width: 190px;
+  }
+  
+  .st-app-main {
+      margin-right: 190px;
+  }
+  
+  .widgetbar-collapsed .st-app-main {
+      margin-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .lucen-widgetbar {
+      transform: translateX(100%);
+  }
+      
+  .st-app-main {
+      margin-right: 0;
+  }
+  
+  .lucen-widgetbar.show-mobile {
+      transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .st-app-main {
+      margin-left: 0;
+      padding: 15px;
+  }
+  
+  .st-app-main.sidebar-collapsed  {
+      margin-left: 0;
+  }
+}
+
+
+//**************************************
+//** BarMenu - Barra superior estilo
+//** Dektop
+//**************************************
+
+/* Drops down */
+.lucen-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  min-width: 160px;
+  padding: 0;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  background: $lucen-background-primary;
+  border-radius: $lucen-border-radius;
+  box-shadow: $lucen-shadow-md;
+
+  a {
+    display: block;
+    padding: $lucen-spacing-sm $lucen-spacing-md;
+    color: $lucen-text-primary;
+    text-decoration: none;
+
+    &:hover {
+      background: $lucen-background-secondary;
+    }
+  }
+}
+
+.lucen-menubar {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 $lucen-spacing-sm;
+  background-color: $lucen-background-primary;
+  border-radius: $lucen-border-radius;
+  box-shadow: $lucen-shadow-sm;
+}
+
+.lucen-menubar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 $lucen-spacing-md;
+  color: $lucen-text-primary;
+  cursor: pointer;
+  user-select: none;
+  transition: $lucen-transition;
+}
+
+.lucen-menubar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $lucen-background-primary;
+  border: 1px solid transparent;
+  border-radius: $lucen-border-radius;
+  box-shadow: $lucen-shadow-md;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.2s ease,
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+
+  &.show {
+    max-height: 500px;
+    padding: $lucen-spacing-sm 0;
+    opacity: 1;
+    transform: translateY(0);
+    border-color: $lucen-border-color;
+  }
+
+  &.dropup {
+    top: auto;
+    bottom: 100%;
+    transform-origin: bottom;
+  }
+}
+
+.left-expand {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.lucen-menubar-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  color: $lucen-text-primary;
+  text-decoration: none;
+  transition: $lucen-transition;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+  }
+
+  i {
+    width: 20px;
+    text-align: center;
+  }
+}
+
+.lucen-menubar-dropdown-divider {
+  height: 1px;
+  margin: $lucen-spacing-xs 0;
+  background-color: $lucen-border-color;
+}
+
+.lucen-menubar-arrow {
+  margin-left: $lucen-spacing-sm;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lucen-menubar-item.active .lucen-menubar-arrow {
+  transform: rotate(180deg);
+}
+
+.lucen-menubar-user {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  border-radius: $lucen-border-radius;
+  transition: $lucen-transition;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+  }
+}
+
+.lucen-menubar-user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 0.875rem;
+  color: $lucen-text-white;
+  background-color: $lucen-primary;
+  border-radius: 50%;
+}
+
+
+//**************************************
+//** BarFooter - Barra de futer inferior
+//**
+//**************************************
+.lucen-footer {
+    padding: 0.6rem 1rem;
+    text-align: center;
+
+}
+
+.lucen-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: $lucen-spacing-lg;
+    justify-content: center;
+    align-items: center;
+}
+
+.lucen-footer-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin:0;
+}
+
+.lucen-footer-copyright {
+    font-size: 0.9rem;
+    margin:0;
+}
+
+.lucen-footer-copyright a {
+    color: $lucen-primary;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lucen-footer-copyright a:hover {
+    color: $lucen-primary-light;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lucen-footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .lucen-footer-content{
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .lucen-footer-brand {
+        font-size: 1.25rem;
+    }
+}

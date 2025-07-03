@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+// Bloques de código
+.lucen-code-block {
+  position: relative;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: #f8f8f2;
+  overflow-x: auto;
+
+  .code {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: $lucen-background-dark !important;
+    border-radius: $lucen-border-radius-lg;
+    color: white;
+    font-weight: 700;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: $lucen-spacing-sm;
+    right: $lucen-spacing-sm;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: $lucen-text-white;
+    padding: $lucen-spacing-xs $lucen-spacing-sm;
+    border-radius: $lucen-border-radius;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: $lucen-transition;
+    display: flex;
+    align-items: center;
+    gap: $lucen-spacing-xs;
+  }
+}
+
+// Estilos de sintaxis para resaltado de código
+.hljs-fment, .hljs-quote {color: #969896}
+.hljs-deletion, .hljs-name, .hljs-regexp, .hljs-selector-class, .hljs-selector-id, .hljs-tag, .hljs-template-variable, .hljs-variable {color: #a3336b}
+.hljs-built_in, .hljs-link, .hljs-literal, .hljs-meta, .hljs-number, .hljs-params, .hljs-type {color: #e78c45}
+.hljs-attribute {color: #e7c547}
+.hljs-addition, .hljs-bullet, .hljs-string, .hljs-symbol {color: #b9ca4a}
+.hljs-section, .hljs-title {color: #7aa6da}
+.hljs-keyword, .hljs-selector-tag {color: #c397d8}
+.hljs-tag .hljs-name {color: #ea5a51}
+.hljs-tag .hljs-attr {color: #998ddb}

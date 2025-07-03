@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+// Formularios
+.lucen-form {
+  display: flex;
+  flex-direction: column;
+  gap: $lucen-spacing-md;
+}
+
+.lucen-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $lucen-spacing-xs;
+}
+
+.lucen-label {
+  font-weight: 500;
+  color: $lucen-text-primary;
+  font-size: 0.875rem;
+}

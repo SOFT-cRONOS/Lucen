@@ -1,0 +1,87 @@
+@use 'variables' as *;
+
+/* CommandBar vertical para móviles */
+.commandbar-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: $lucen-spacing-xs;
+  width: 100%;
+  align-items: start;
+}
+
+/* CommandBar horizontal estándar */
+.commandbar-horizontal {
+  display: flex;
+  gap: $lucen-spacing-xs;
+  width: 100%;
+  // overflow-x: auto;
+  padding-bottom: $lucen-spacing-xs;
+}
+
+/* CommandBar compacta (iconos sin texto) */
+.commandbar-compact {
+  .lucen-btn {
+    min-width: 40px;
+    justify-content: center;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+/* CommandBar responsive */
+.commandbar-responsive {
+  display: flex;
+  gap: $lucen-spacing-xs;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @media (max-width: 800px) {
+    span {
+      display: none;
+    }
+  }
+}
+
+/* CommandBar contextual */
+.commandbar-contextual {
+  background-color: $lucen-primary-light;
+  border-radius: $lucen-border-radius-lg;
+  padding: $lucen-spacing-sm;
+}
+
+/* CommandBar flotante */
+.commandbar-floating-site {
+  margin-top: 80px;
+}
+
+.commandbar-floating {
+  padding: 1rem;
+  width: fit-content;
+  box-shadow: $lucen-shadow-lg;
+  border-radius: $lucen-border-radius-lg;
+}
+
+/* Adaptaciones para móviles */
+@media (max-width: 768px) {
+  .commandbar-floating-site {
+    margin-top: 0px;
+  }
+
+  .commandbar-floating {
+    display: none;
+  }
+
+  .commandbar-horizontal {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .commandbar-responsive {
+    .lucen-btn {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}

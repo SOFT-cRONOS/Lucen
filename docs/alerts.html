@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Complemento para Bootstrap 5</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+
+</head>
+<body class="lucen-body">
+      
+
+<div class="lucen-container col flex-centered">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        <!-- Sección de Alertas -->
+        <section class="">
+            <h1 class="component-title">Alerts</h1>
+            <!-- Alerta popup -->
+                <div class="demo-container">
+                    <h3>Pop Up</h3>
+                    <button class="lucen-btn lucen-btn-danger" data-bs-toggle="modal" data-bs-target="#alertModal">
+                        <span>Open Alert Default</span>
+                    </button>
+                    <div class="lucen-modal" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
+                        <div class="lucen-modal-dialog">
+                            <div class="lucen-modal-content text-center">
+                            <div class="lucen-modal-header">
+                                <h1 id="alertModalLabel">Atención esto es un ejemplo</h1>
+                                <div class="lucen-modal-message">
+                                    Para poder ser solo una alerta quitar data-bs-backdrop="static" data-bs-keyboard="false"
+                                </div>
+                            </div>
+                            <div class="lucen-modal-footer">
+                                <button type="button" class="lucen-btn lucen-btn-primary" data-bs-dismiss="modal">OK</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <!-- Button -->
+                            <button class="lucen-btn" data-bs-toggle="modal" data-bs-target="#alertModal">
+                                <span>Open Alert Default</span>
+                            </button>
+                            <!-- Alert Modal -->    
+                            <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content text-center">
+                                    <div class="lucen-modal-header">
+                                        <h1 id="alertModalLabel">Atención</h1>
+                                        <div class="lucen-modal-message">
+                                            Esta es una alerta al estilo Windows 11 usando Bootstrap 5.
+                                        </div>
+                                    </div>
+                                    <div class="lucen-modal-footer">
+                                        <button type="button" class="lucen-btn lucen-btn-primary" data-bs-dismiss="modal">OK</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Barras de alerta -->
+                <div class="demo-container">
+                    <h3>Alertas</h3>
+                    <div class="lucen-alert">
+                        <i class="bi bi-info-circle"></i>
+                        <div>Esta es una alerta informativa</div>
+                    </div>
+                    
+                    <div class="lucen-alert lucen-alert-success">
+                        <i class="bi bi-check-circle"></i>
+                        <div>¡Operación completada con éxito!</div>
+                    </div>
+                    
+                    <div class="lucen-alert lucen-alert-warning">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <div>Advertencia: Esto es importante</div>
+                    </div>
+                    
+                    <div class="lucen-alert lucen-alert-danger">
+                        <i class="bi bi-x-circle"></i>
+                        <div>Error: Algo salió mal</div>
+                    </div>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <div class="lucen-alert">
+                                <i class="bi bi-info-circle"></i>
+                                <div>Esta es una alerta informativa</div>
+                            </div>
+                            
+                            <div class="lucen-alert lucen-alert-success">
+                                <i class="bi bi-check-circle"></i>
+                                <div>¡Operación completada con éxito!</div>
+                            </div>
+                            
+                            <div class="lucen-alert lucen-alert-warning">
+                                <i class="bi bi-exclamation-triangle"></i>
+                                <div>Advertencia: Esto es importante</div>
+                            </div>
+                            
+                            <div class="lucen-alert lucen-alert-danger">
+                                <i class="bi bi-x-circle"></i>
+                                <div>Error: Algo salió mal</div>
+                            </div>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!--Toast emergentes -->
+                <div class="demo-container">
+                    <h3>Toast</h3>
+                    <button class="lucen-btn" onclick="lucenUI.showToast('Este es un mensaje toast básico')">Mostrar Toast</button>
+                    <button class="lucen-btn lucen-btn-primary" onclick="lucenUI.showToast('Éxito', 'success')">Toast de éxito</button>
+                    <button class="lucen-btn lucen-btn-danger" onclick="lucenUI.showToast('Error', 'error')">Toast de error</button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code="
+                            &lt;button class=&quot;lucen-btn&quot; onclick=&quot;lucenUI.showToast('Este es un mensaje toast básico')&quot;&gt;Mostrar Toast&lt;/button&gt;
+                            &lt;button class=&quot;lucen-btn lucen-btn-primary&quot; onclick=&quot;lucenUI.showToast('Éxito', 'success')&quot;&gt;Toast de éxito&lt;/button&gt;
+                            &lt;button class=&quot;lucen-btn lucen-btn-danger&quot; onclick=&quot;lucenUI.showToast('Error', 'error')&quot;&gt;Toast de error&lt;/button&gt;                                
+                            " class="code"></code>
+                        </pre>
+                    <h3 class="mt-4">Tooltips</h3>
+                    <button class="lucen-btn" data-lucen-tooltip="Este es un tooltip">Botón con tooltip</button>
+                    <button class="lucen-btn lucen-btn-primary" data-lucen-tooltip="Tooltip abajo" data-lucen-placement="bottom">Tooltip abajo</button>
+                    <button class="lucen-btn lucen-btn-info" data-lucen-tooltip="Tooltip derecha" data-lucen-placement="right">Tooltip derecha</button>
+                    <button class="lucen-btn lucen-btn-warning" data-lucen-tooltip="Tooltip izquierda" data-lucen-placement="left">Tooltip izquierda</button>
+
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            &lt;button class=&quot;lucen-btn&quot; data-lucen-tooltip=&quot;Este es un tooltip&quot;&gt;Botón con tooltip&lt;/button&gt;
+                            &lt;button class=&quot;lucen-btn lucen-btn-primary&quot; data-lucen-tooltip=&quot;Tooltip abajo&quot; data-lucen-placement=&quot;bottom&quot;&gt;Tooltip abajo&lt;/button&gt;
+                            &lt;button class=&quot;lucen-btn lucen-btn-info&quot; data-lucen-tooltip=&quot;Tooltip derecha&quot; data-lucen-placement=&quot;right&quot;&gt;Tooltip derecha&lt;/button&gt;
+                            &lt;button class=&quot;lucen-btn lucen-btn-warning&quot; data-lucen-tooltip=&quot;Tooltip izquierda&quot; data-lucen-placement=&quot;left&quot;&gt;Tooltip izquierda&lt;/button&gt;
+                            ' class="code"></code>
+                        </pre>
+                </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+</div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+<script>
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    styeCode();
+    hljs.highlightAll();
+});
+
+</script>
+    
+</body> 
+</html>
+

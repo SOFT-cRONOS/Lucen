@@ -1,0 +1,52 @@
+@use 'variables' as *;
+
+// Tipografía
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color:$lucen-text-white!important;
+
+  h1, h2, h3, h4, h5, h6, p, i, a, span {
+    color:$lucen-text-white!important;
+  }
+}
+
+.text-primary {
+  color:$lucen-text-primary!important;
+
+  h1, h2, h3, h4, h5, h6, p, i, a, span {
+    color:$lucen-text-primary!important;
+  }
+}
+
+//size
+.big {font-size:1.8rem!important}
+.medium {font-size:1.5rem!important}
+.normal {font-size:1.3rem!important}
+.small { font-size: 0.875rem!important;}
+.micro {font-size: 0.775rem!important;}
+
+
+
+.text-muted {
+  color: #6c757d;
+}
+
+.lucen-title {
+  color: $lucen-text-primary;
+  font-weight: 600;
+  margin-bottom: $lucen-spacing-sm;
+}
+
+.lucen-subtitle {
+  color: $lucen-text-secondary;
+  margin-bottom: $lucen-spacing-lg;
+}
+
+.lucen-brand {
+  font-size: 1.5rem!important;
+  font-weight: 600!important;
+  letter-spacing: -0.5px!important;
+}

@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+// Componente Select
+.app-select {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  user-select: none;
+  padding: 0;
+}
+
+.lucen-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  background-color: $lucen-background-primary;
+  border-radius: $lucen-border-radius;
+  cursor: pointer;
+  transition: $lucen-transition;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+    border-color: $lucen-primary-light;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $lucen-primary-light;
+  }
+}
+
+.lucen-select-selected {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lucen-select-arrow {
+  margin-left: $lucen-spacing-sm;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lucen-select {
+  &.active {
+    .lucen-select-arrow {
+      transform: rotate(180deg);
+    }
+
+    .lucen-select-dropdown {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+      border-color: $lucen-border-color;
+    }
+
+    outline: none;
+    border-color: $lucen-primary;
+    box-shadow: $lucen-shadow-sm;
+  }
+}
+
+.lucen-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: $lucen-background-primary;
+  border-radius: 0 0 $lucen-border-radius-lg $lucen-border-radius-lg;
+  box-shadow: $lucen-shadow-md;
+  margin-top: $lucen-spacing-xs;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.2s ease,
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-5px);
+  border: 1px solid transparent;
+}
+
+.lucen-select-option {
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  color: $lucen-text-primary;
+  cursor: pointer;
+  transition: $lucen-transition;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+  }
+
+  i {
+    width: 20px;
+    text-align: center;
+  }
+}
+
+.lucen-select-divider {
+  height: 1px;
+  background-color: $lucen-border-color;
+  margin: $lucen-spacing-xs 0;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

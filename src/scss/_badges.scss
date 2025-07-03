@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+// Badges
+.lucen-badge {
+  display: inline-block;
+  padding: $lucen-spacing-xs $lucen-spacing-sm;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: $lucen-border-radius-lg;
+  background-color: $lucen-background-tertiary;
+  color: $lucen-text-primary;
+}
+
+.lucen-badge-primary {
+  background-color: $lucen-primary;
+  color: $lucen-text-white;
+}
+
+.lucen-badge-success {
+  background-color: $lucen-success;
+  color: $lucen-text-white;
+}
+
+.lucen-badge-danger {
+  background-color: $lucen-danger;
+  color: $lucen-text-white;
+}
+
+.lucen-badge-warning {
+  background-color: $lucen-warning;
+  color: $lucen-text-white;
+}

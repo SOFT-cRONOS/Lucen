@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+/* Barras de progreso */
+  .lucen-progress {
+  height: 4px;
+  background-color: $lucen-background-tertiary;
+  border-radius: 2px;
+  overflow: hidden;
+  }
+  
+  .lucen-progress-bar {
+  height: 100%;
+  background-color: $lucen-primary;
+  transition: width 0.3s ease;
+  position: relative;
+  }
+  
+  .lucen-progress-bar::after {
+  content: attr(data-progress);
+  position: absolute;
+  right: $lucen-spacing-xs;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $lucen-text-white;
+  font-size: 0.625rem;
+  }
+  

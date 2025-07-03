@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Appearance & Themes</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+        .customization-example {
+            background-color: var(--lucen-background-secondary);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .theme-controls-example {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .custom-theme-preview {
+            height: 100px;
+            border-radius: 8px;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            background-color: var(--custom-primary);
+            color: var(--custom-text);
+        }
+    </style>
+</head>
+<body class="lucen-body ">
+      
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Apariencia -->
+        <section class="">
+            <h1 class="component-title">Appearance & Themes</h1>
+            <p class="lucen-subtitle">Theme switching functionality and customization options</p>
+            
+            <!-- Theme Switching -->
+            <div class="demo-container">
+                <h3>Theme Switching</h3>
+                <p>The framework supports light and dark themes out of the box. The current theme is applied to the <code>html</code> element using the <code>data-theme</code> attribute.</p>
+                
+                <div class="theme-controls-example">
+                    <button class="lucen-btn theme-btn" data-theme="light">Light Theme</button>
+                    <button class="lucen-btn theme-btn" data-theme="dark">Dark Theme</button>
+                    <button class="lucen-btn theme-btn" id="system-theme-btn">System Preference</button>
+                </div>
+                
+                <p>You can also use the theme toggle switch component.</p>
+            
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Manual theme buttons -->
+                    <button class="lucen-btn theme-btn" data-theme="light">Light Theme</button>
+                    <button class="lucen-btn theme-btn" data-theme="dark">Dark Theme</button>
+                    <button class="lucen-btn theme-btn" id="system-theme-btn">System Preference</button>
+                    
+                    <!-- Toggle switch -->
+                    <div class="lucen-switch-variant">
+                        <label class="switch-label" for="theme-toggle">Dark Mode</label>
+                        <div class="lucen-switch">
+                            <input type="checkbox" id="theme-toggle">
+                        </div>
+                    </div>
+                    
+                    <!-- JavaScript API -->
+                    lucenUI.setTheme("light"); // Force light theme
+                    lucenUI.setTheme("dark");  // Force dark theme
+                    lucenUI.useSystemPreference(); // Use system preference
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Theme Persistence -->
+            <div class="demo-container">
+                <h3>Theme Persistence</h3>
+                <p>The selected theme is automatically saved to <code>localStorage</code> (except when using system preference). You can check the current theme with:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    // Get current theme
+                    const currentTheme = document.documentElement.getAttribute("data-theme");
+                    
+                    // Check if using system preference
+                    const usingSystemPref = !localStorage.getItem("lucen-theme");
+                    
+                    // Listen for theme changes
+                    document.addEventListener("themeChanged", (e) => {
+                        console.log("Theme changed to:", e.detail.theme);
+                    });
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Customizing Themes -->
+            <div class="demo-container">
+                <h3>Customizing Themes</h3>
+                <p>You can extend or override the default themes by adding your own CSS variables. Create a new CSS file that loads after the framework:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Override light theme */
+                    [data-theme="light"] {
+                        --lucen-background-primary: #ffffff;
+                        --lucen-background-secondary: #f5f5f5;
+                        /* Add your custom variables */
+                        --custom-primary: #2a9d8f;
+                        --custom-text: #ffffff;
+                    }
+                    
+                    /* Override dark theme */
+                    [data-theme="dark"] {
+                        --lucen-background-primary: #121212;
+                        --lucen-background-secondary: #1e1e1e;
+                        /* Add your custom variables */
+                        --custom-primary: #264653;
+                        --custom-text: #ffffff;
+                    }
+                    
+                    /* Components using custom variables */
+                    .custom-component {
+                        background-color: var(--custom-primary);
+                        color: var(--custom-text);
+                    }
+                    ' class="code"></code>
+                </pre>
+                
+                <div class="customization-example">
+                    <h4>Custom Theme Variables Example</h4>
+                    <p>This element uses custom theme variables:</p>
+                    <div class="custom-theme-preview">
+                        Custom Theme Component
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Creating New Themes -->
+            <div class="demo-container">
+                <h3>Creating Additional Themes</h3>
+                <p>You can create completely new themes by adding new <code>data-theme</code> selectors:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Add a new theme */
+                    [data-theme="high-contrast"] {
+                        --lucen-background-primary: #000000;
+                        --lucen-background-secondary: #111111;
+                        --lucen-text-primary: #ffffff;
+                        --lucen-text-secondary: #eeeeee;
+                        /* Add all required variables */
+                    }
+                    
+                    /* Activate the new theme */
+                    document.documentElement.setAttribute("data-theme", "high-contrast");
+                    lucenUI.setTheme("high-contrast");
+                    ' class="code"></code>
+                </pre>
+                
+                <div class="lucen-alert lucen-alert-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>When creating new themes, make sure to define all necessary variables for consistent appearance across components.</span>
+                </div>
+            </div>
+            
+            <!-- Component-Specific Overrides -->
+            <div class="demo-container">
+                <h3>Component-Specific Overrides</h3>
+                <p>For targeted changes, you can override component styles based on the current theme:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Light theme specific styles */
+                    [data-theme="light"] .lucen-card {
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    /* Dark theme specific styles */
+                    [data-theme="dark"] .lucen-card {
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                        border: 1px solid var(--lucen-border-color);
+                    }
+                    
+                    /* Theme-aware custom component */
+                    .pricing-card {
+                        background-color: var(--lucen-background-primary);
+                        color: var(--lucen-text-primary);
+                        transition: all 0.3s ease;
+                    }
+                    
+                    [data-theme="light"] .pricing-card:hover {
+                        background-color: var(--lucen-background-secondary);
+                    }
+                    
+                    [data-theme="dark"] .pricing-card:hover {
+                        background-color: var(--lucen-background-tertiary);
+                    }
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- JavaScript API -->
+            <div class="demo-container">
+                <h3>JavaScript API</h3>
+                <p>The framework provides several methods for theme management:</p>
+                
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    // Set theme directly
+                    lucenUI.setTheme("light" | "dark");
+                    
+                    // Use system preference
+                    lucenUI.useSystemPreference();
+                    
+                    // Get current theme
+                    const currentTheme = document.documentElement.getAttribute("data-theme");
+                    
+                    // Listen for theme changes
+                    document.addEventListener("themeChanged", (event) => {
+                        console.log("New theme:", event.detail.theme);
+                    });
+                    
+                    // Check if using system preference
+                    const isSystemTheme = !localStorage.getItem("lucen-theme");
+                    
+                    // Update UI when theme changes
+                    function updateThemeUI(theme) {
+                        // Your logic here
+                    }
+                    
+                    // Initial call
+                    updateThemeUI(currentTheme);
+                    
+                    // Listen for changes
+                    document.addEventListener("themeChanged", (e) => {
+                        updateThemeUI(e.detail.theme);
+                    });
+                    ' class="code"></code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+        
+        // System theme button
+        document.getElementById('system-theme-btn')?.addEventListener('click', () => {
+            lucenUI.useSystemPreference();
+        });
+        
+        // Theme buttons
+        document.querySelectorAll('.theme-btn[data-theme]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.getAttribute('data-theme');
+                lucenUI.setTheme(theme);
+            });
+        });
+        
+        // Custom theme example variables
+        const style = document.createElement('style');
+        style.textContent = `
+            [data-theme="light"] {
+                --custom-primary: #2a9d8f;
+                --custom-text: #ffffff;
+            }
+            [data-theme="dark"] {
+                --custom-primary: #264653;
+                --custom-text: #ffffff;
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
+    
+</body> 
+</html>

@@ -1,0 +1,173 @@
+// Configuración de temas
+:root {
+    // Light theme (default)
+    --lucen-theme: 'light';
+} 
+
+[data-theme="light"] {
+    // Colores principales
+    --lucen-primary: #0163bf;
+    --lucen-primary-light: #4b9eec;
+    --lucen-primary-mlight: #c3e1fd;
+    --lucen-primary-ulight: #e3effa;
+    --lucen-primary-dark: #03467a;
+    --lucen-tertiary-light: #f8cbf7;
+    --lucen-tertiary-mlight: #f9d0f8;
+    --lucen-tertiary-ulight: #faecfc;
+    --lucen-success: #00cc6a;
+    --lucen-success-light: #ebfcf4;
+    --lucen-success-light-rgb: 235, 252, 244;
+    --lucen-danger: #e81123;
+    --lucen-danger-light: #fae5e7;
+    --lucen-danger-light-rgb: 250, 229, 231;
+    --lucen-warning: #ffb900;
+    --lucen-warning-light: #fff9e9;
+    --lucen-warning-light-rgb: 255, 249, 233;
+    --lucen-info: #b146c2;
+    --lucen-info-light: #e2f9fa;
+    --lucen-info-light-rgb: 226, 249, 250;
+    --lucen-primary-light-rgb: 75, 158, 236;
+
+    // Colores de texto
+    --lucen-text-primary: #323130;
+    --lucen-text-secondary: #605e5c;
+    --lucen-text-tertiary: #a19f9d;
+    --lucen-text-white: #ffffff;
+
+    // Colores de fondo
+    --lucen-background-primary: #ffffff;
+    --lucen-background-primary-rgb: 255, 255, 255;
+    --lucen-background-secondary: #f3f2f1;
+    --lucen-background-tertiary: #e6e6e6;
+    --lucen-background-tertiary-rgb: 59, 58, 57;
+    --lucen-background-quaternary: #e1e1e1;
+    --lucen-background-dark: #201f1e;
+
+    // Bordes
+    --lucen-border-color: #e6e5e5;
+    --lucen-border-color-rgb: 230, 229, 229;
+}
+  
+  // Dark theme
+[data-theme="dark"] {
+
+  // Ajustes para dark mode
+  // Colores principales
+  --lucen-primary: #0163bf;
+  --lucen-primary-light: #4b9eec;
+  --lucen-primary-mlight:#063f70;
+  --lucen-primary-ulight: #04223d;
+  --lucen-primary-dark: #03467a;
+  --lucen-tertiary-light:#583b57;
+  --lucen-tertiary-mlight: #4a3b49;
+  --lucen-tertiary-ulight: #272026;
+  --lucen-success: #4cb482; 
+  --lucen-success-light: #006c38 ;
+  --lucen-success-light-rgb: 0, 108, 56;
+  --lucen-danger: #bd343f ;
+  --lucen-danger-light: #77000a;
+  --lucen-danger-light-rgb: 119, 0, 10;
+  --lucen-warning: #c5a042; 
+  --lucen-warning-light: #513b00 ;
+  --lucen-warning-light-rgb: 81, 59, 0;
+  --lucen-info: #9d3eac;
+  --lucen-info-light: #e2f9fa;
+  --lucen-info-light-rgb: 226, 249, 250;
+  --lucen-primary-light-rgb: 75, 158, 236;
+
+  --lucen-text-primary: #ffffff;
+  --lucen-text-secondary: #a19f9d;
+  --lucen-text-tertiary: #797775;
+  --lucen-text-white: #ffffff;
+
+  --lucen-background-primary: #201f1e;
+  --lucen-background-primary-rgb: 32, 31, 30;
+  --lucen-background-secondary: #2d2c2c;
+  --lucen-background-tertiary: #3b3a39;
+  --lucen-background-tertiary-rgb: 59, 58, 57;
+  --lucen-background-quaternary: #323130;
+  --lucen-background-dark: #201f1e;
+
+  --lucen-border-color: #3b3a39;
+  --lucen-border-color-rgb: 59, 58, 57;
+}
+  
+  // Variables SCSS que referencian las variables CSS
+  $lucen-primary: var(--lucen-primary);
+  $lucen-primary-light: var(--lucen-primary-light);
+  $lucen-primary-ulight: var(--lucen-primary-ulight);
+  $lucen-primary-mlight: var(--lucen-primary-mlight);
+  $lucen-tertiary-light: var(--lucen-tertiary-light);
+  $lucen-tertiary-ulight: var(--lucen-tertiary-ulight);
+  $lucen-tertiary-mlight: var(--lucen-tertiary-mlight);
+  $lucen-primary-dark: var(--lucen-primary-dark);
+  $lucen-success: var(--lucen-success);
+  $lucen-success-light: var(--lucen-success-light);
+  $lucen-success-light-rgb: var(--lucen-success-light-rgb);
+  $lucen-danger: var(--lucen-danger);
+  $lucen-danger-light: var(--lucen-danger-light);
+  $lucen-danger-light-rgb: var(--lucen-danger-light-rgb);
+  $lucen-warning: var(--lucen-warning);
+  $lucen-warning-light: var(--lucen-warning-light);
+  $lucen-warning-light-rgb: var(--lucen-warning-light-rgb);
+  $lucen-info: var(--lucen-info);
+  $lucen-info-light: var(--lucen-info-light);
+  $lucen-info-light-rgb: var(--lucen-info-light-rgb);
+  $lucen-primary-light-rgb: var(--lucen-primary-light-rgb);
+  
+  $lucen-text-primary: var(--lucen-text-primary);
+  $lucen-text-secondary: var(--lucen-text-secondary);
+  $lucen-text-tertiary: var(--lucen-text-tertiary);
+  $lucen-text-white: var(--lucen-text-white);
+  
+  $lucen-background-primary: var(--lucen-background-primary);
+  $lucen-background-primary-rgb: var(--lucen-background-primary-rgb);
+  $lucen-background-secondary: var(--lucen-background-secondary);
+  $lucen-background-tertiary: var(--lucen-background-tertiary);
+  $lucen-background-tertiary-rgb: var(--lucen-background-tertiary-rgb);
+  $lucen-background-quaternary: var(--lucen-background-quaternary);
+  $lucen-background-dark: var(--lucen-background-dark);
+  
+  $lucen-border-color: var(--lucen-border-color);
+  $lucen-border-color-rgb: var(--lucen-border-color-rgb);
+
+  // Variables que no cambian entre temas
+ 
+  $lucen-border-radius: 4px;
+  $lucen-border-radius-lg: 8px;
+  $lucen-shadow-sm: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+  $lucen-shadow-md: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  $lucen-shadow-lg: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+  $lucen-transition: all 0.2s ease;
+  $lucen-spacing-xs: 3px;
+  $lucen-spacing-sm: 6px;
+  $lucen-spacing-md: 11px;
+  $lucen-spacing-lg: 24px;
+  $lucen-spacing-xl: 32px;
+  $lucen-spacing-xxl: 52px;
+  $lucen-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  $lucen-box-shadow-bg: 0 10px 50px rgba(0, 0, 0, 0.4) !important;
+  $lucen-box-shadow-md: 0 2px 15px rgba(0, 0, 0, 0.1) !important;
+  $lucen-box-shadow-float: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  // _theme.scss
+.theme-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    
+    .theme-btn {
+      transition: all 0.3s ease;
+      
+      &.active {
+        background-color: $lucen-primary;
+        color: $lucen-text-white;
+        border-color: $lucen-primary;
+      }
+    }
+  }
+  
+  // Asegurar transiciones suaves
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  

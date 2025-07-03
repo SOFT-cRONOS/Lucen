@@ -1,0 +1,472 @@
+@use 'variables' as *;
+
+/* Layout */
+.lucen-body {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  background-color: $lucen-background-secondary;
+  color: $lucen-text-secondary;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.lucen-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  transition: $lucen-transition;
+}
+
+.full-display {
+  min-height: 100vh;
+}
+
+.lucen-main {
+  display: flex;
+  flex: 1;
+  padding: $lucen-spacing-lg;
+  /* margin-left: 250px; */
+  transition: $lucen-transition;
+  // background-color: $lucen-background-secondary;
+  flex-direction: column;
+}
+
+.st-app-main {
+  margin-left: 250px;
+  padding: 0 20px 0 35px;
+  transition: $lucen-transition;
+
+
+    section{
+        width: 100%;
+    }
+  &.r-widget {
+    margin-right: 210px; //espacio que deja para el widget derecho
+  }
+  
+}
+
+//contenedor flotante centrado arriba
+.floating-container-top {
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    top: $lucen-spacing-lg;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 250px); /* Resta el ancho del sidebar y el padding */
+    z-index: 1000;
+    transition: $lucen-transition;
+}
+
+/* Cuando el sidebar está contraído (60px) */
+.sidebar-collapsed .floating-container-top {
+    width: calc(100% - 60px);
+    transition: $lucen-transition;
+}
+
+.demo-container {
+    padding: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    border: 1px solid var(--lucen-border-color);
+}
+
+//filas y columnas
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.col-sm {
+  width: 30%;
+}
+
+.col-md-4 {
+  width: 40%;
+}
+
+.col-md {
+  width: 50%;
+}
+
+.col-md-6 {
+  width: 60%;
+}
+
+.col-lg {
+  width: 100%;
+}
+
+.flex-centered {justify-content: center;
+                align-items: center;
+                align-content: center;}
+
+.text-centered {text-align: center;}
+
+//margenes
+.m-0 {margin: 0;}
+.m-2 {margin: 2rem}
+.m-3 {margin: 3rem}
+.mt-0 {margin-top: 0!important;}
+.mt-3 { margin-top: $lucen-spacing-md; }
+.mt-4 { margin-top: $lucen-spacing-xl; }
+.me-1 {margin-right: $lucen-spacing-md;}
+.mb-0 {margin-bottom: 0;}
+.mb-1 {margin-bottom: 0.5rem!important;}
+.mb-2 {margin-bottom:1rem!important}
+.mb-3 {margin-bottom: 1.3rem;}
+.mb-4 {margin-bottom: $lucen-spacing-xl; }
+
+//padding
+.p-0 {padding: 0;}
+.pt-0{padding-top: 0;}
+.lucen-p-sm{padding: $lucen-spacing-sm;}
+.lucen-p-md{padding: $lucen-spacing-md;}
+.lucen-p-lg{padding: $lucen-spacing-lg;}
+.lucen-p-xl{padding: $lucen-spacing-xl;}
+.lucen-p-xxl{padding: $lucen-spacing-xxl;}
+
+//gap
+.gap-2 {gap: $lucen-spacing-sm}
+
+// Utilidades
+.lucen-bg-primary { background: linear-gradient(to bottom right, $lucen-primary, $lucen-primary-light)!important;}
+.lucen-bg-success { background-color: $lucen-success; }
+.lucen-bg-danger { background-color: $lucen-danger; }
+.lucen-bg-warning { background-color: $lucen-warning; }
+.lucen-bg-info { background-color: $lucen-info; }
+
+.lucen-text-primary { color: $lucen-text-primary; }
+.lucen-text-secondary { color: $lucen-text-secondary; }
+.lucen-text-white { color: $lucen-text-white; }
+.lucen-text-light {color: $lucen-text-white;}
+
+.gradient-primary {
+    &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top, 
+      rgba($lucen-primary-dark, 0.8) 0%, 
+      rgba($lucen-primary-dark, 0.3) 70%
+    );
+    z-index: 0;
+  }
+}
+
+.transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+.acrylic {
+  backdrop-filter: blur(10px)!important;
+  -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
+  background-color: rgba($lucen-background-primary-rgb, 0.8)!important;
+
+  &-md {
+    backdrop-filter: blur(10px)!important;
+    -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
+    background-color: rgba($lucen-background-primary-rgb, 0.5)!important;
+  }
+
+  &-sf {
+    backdrop-filter: blur(10px)!important;
+    -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
+    background-color: rgba($lucen-background-primary-rgb, 0.3)!important;
+
+    &-lr {
+      backdrop-filter: blur(10px)!important;
+      -webkit-backdrop-filter: blur(10px)!important; /* Soporte para Safari */
+      background: linear-gradient(
+        to right,
+        rgba(var(--lucen-background-primary-rgb), 0) 0%,       /* transparente total al inicio */
+        rgba(var(--lucen-background-primary-rgb), 0.4) 100%    /* color con alfa 0.3 al final */
+      ) !important;
+      background-color: transparent!important;
+    }
+  }
+}
+
+
+.gradient-icon {
+  background: linear-gradient(to bottom right, $lucen-primary, $lucen-primary-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* 
+Hero Banners 
+*/
+.lucen-hero {
+    position: relative;
+    max-width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $lucen-spacing-xl;
+    margin-bottom: $lucen-spacing-lg;
+    border-radius: $lucen-border-radius-lg;
+    overflow: hidden;
+    transition: $lucen-transition;
+    
+    &-content {
+        position: relative;
+        z-index: 2;
+        max-width: 90%;
+        text-align: center;
+        color: $lucen-text-primary;
+        margin: 0 auto;
+    }
+    
+    &-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: $lucen-spacing-md;
+        line-height: 1.2;
+    }
+    
+    &-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: $lucen-spacing-lg;
+        color: $lucen-text-secondary;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &-actions {
+        display: flex;
+        gap: $lucen-spacing-md;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Variantes */
+    &.minimal-hero {
+        background: linear-gradient(135deg, $lucen-primary, $lucen-primary-dark);
+        color: $lucen-text-white;
+        
+        .lucen-hero-title,
+        .lucen-hero-subtitle {
+            color: $lucen-text-white;
+        }
+    }
+    
+    &.image-hero {
+        background-size: cover;
+        background-position: center;
+        color: $lucen-text-white;
+        
+        .lucen-hero-title,
+        .lucen-hero-subtitle {
+            color: $lucen-text-white;
+        }
+    }
+    
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+}
+
+/* 
+Hero Slider
+ */
+
+.lucen-hero-slider {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 350px;
+    border-radius: $lucen-border-radius-lg;
+    margin-bottom: $lucen-spacing-lg;
+    
+    .lucen-hero-slide {
+        position: absolute;
+        bottom: $lucen-spacing-lg;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        flex: 0 0 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: $lucen-spacing-md;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        
+        &.active {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+    
+    &-controls {
+        position: absolute;
+        bottom: $lucen-spacing-lg;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $lucen-spacing-md;
+        z-index: 3;
+        
+        .slider-dots {
+            display: flex;
+            gap: $lucen-spacing-sm;
+            
+            .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgba($lucen-text-white, 0.5);
+                cursor: pointer;
+                transition: $lucen-transition;
+                
+                &.active {
+                    background-color: $lucen-text-white;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        
+        .lucen-btn {
+            background-color: rgba($lucen-text-white, 0.2);
+            color: $lucen-text-white;
+            border: none;
+            
+            &:hover {
+                background-color: rgba($lucen-text-white, 0.3);
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lucen-hero {
+        min-height: 300px;
+        padding: $lucen-spacing-lg;
+        
+        &-title {
+            font-size: 2rem;
+        }
+        
+        &-subtitle {
+            font-size: 1rem;
+        }
+    }
+    
+    .lucen-hero-slider {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lucen-hero {
+        min-height: 250px;
+        padding: $lucen-spacing-md;
+        
+        &-title {
+            font-size: 1.5rem;
+        }
+        
+        &-actions {
+            flex-direction: column;
+            gap: $lucen-spacing-sm;
+        }
+    }
+}
+
+
+
+/* 
+Login
+ */
+
+     /* .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } */
+
+    .login-header {
+      text-align: center;
+      margin-bottom: $lucen-spacing-sm;
+    }
+
+    .login-header h2 {
+      margin: 0;
+      font-weight: 600;
+      color: var(--lucen-primary-dark);
+    }
+
+    .login-header p {
+      margin: 0;
+      color: var(--lucen-text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .login-header img {
+      width: 42px;
+      height: 42px;
+    }
+
+    /* .lucen-form .lucen-btn {
+      margin-top: var(--lucen-spacing-sm);
+    } */
+
+    .lucen-form-group:last-of-type {
+      margin-bottom: 0;
+      margin-bottom: $lucen-spacing-sm;
+    }
+
+    .login-footer {
+      font-size: 0.8rem;
+      color: var(--lucen-primary-dark);
+      text-align: center;
+      margin-top: $lucen-spacing-sm;
+    }
+
+    /* .flex-centered {
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    } */

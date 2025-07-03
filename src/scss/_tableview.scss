@@ -1,0 +1,114 @@
+@use 'variables' as *;
+
+// Tablas
+.lucen-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: $lucen-spacing-md;
+}
+
+.lucen-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $lucen-spacing-md;
+
+  th, td {
+    padding: $lucen-spacing-md;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    background-color: transparent;
+    color: $lucen-text-primary;
+    border-bottom: 2px solid $lucen-border-color;
+  }
+
+  tr:hover {
+    background-color: $lucen-background-secondary;
+  }
+}
+
+.lucen-table-striped {
+  tr:nth-child(even) {
+    background-color: $lucen-background-secondary;
+  }
+
+  tr:hover {
+    background-color: $lucen-background-tertiary;
+  }
+}
+
+.lucen-table-bordered {
+  border: 1px solid $lucen-border-color;
+
+  th, td {
+    border: 1px solid $lucen-border-color;
+  }
+}
+
+// Paginación
+.lucen-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  margin-top: $lucen-spacing-md;
+
+  .lucen-btn {
+    min-width: 36px;
+    padding: $lucen-spacing-sm;
+  }
+}
+
+.lucen-pagination-info {
+  margin: 0 $lucen-spacing-md;
+  color: $lucen-text-secondary;
+  font-size: 0.875rem;
+}
+
+// Paginación numérica
+.page-numbers {
+  display: flex;
+  gap: 4px;
+  margin: 0 8px;
+  padding: 15px;
+}
+
+.page-btn {
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $lucen-text-primary;
+  border: none;
+  border-radius: $lucen-border-radius-lg;
+  cursor: pointer;
+  transition: $lucen-transition;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+    box-shadow: $lucen-box-shadow;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.active {
+    background-color: $lucen-primary;
+    color: $lucen-text-white;
+    border-color: $lucen-primary;
+    box-shadow: $lucen-box-shadow-md;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

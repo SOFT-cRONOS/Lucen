@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Complemento para Bootstrap 5</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+
+    </style>
+
+</head>
+<body class="lucen-body gradient-background">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Botones -->
+        <section class="">
+            <h1 class="component-title">Botones</h1>
+            <!-- Muestra general -->
+                <div class="demo-container">
+                    <button class="lucen-btn">
+                        <span>Default Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-primary">
+                        <span>Primary</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-success">
+                        <span>Success</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-danger">
+                        <span>Danger</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-warning">
+                        <span>Warning</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-info">
+                        <span>Info</span>
+                    </button>
+                </div>
+            <!-- Boton default -->
+                <div class="demo-container">
+                    <h3>Default</h3>
+                    <button class="lucen-btn">
+                        <span>Default Button</span>
+                    </button>
+                    <button class="lucen-btn">
+                        <i class="bi bi-star"></i>
+                        <span>Default Button</span>
+                    </button>
+                    <button class="lucen-btn disabled" >
+                        <span>Default Button</span>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn">
+                                <span>Default Button</span>
+                            </button>
+                            <button class="lucen-btn">
+                                <i class="bi bi-star"></i>
+                                <span>Default Button</span>
+                            </button>
+                            <button class="lucen-btn disabled" >
+                                <span>Default Button</span>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Boton Primario -->
+                <div class="demo-container">
+                    <h3>Primario</h3>
+                    <button class="lucen-btn lucen-btn-primary">
+                        <span>Primary Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-primary">
+                        <i class="bi bi-star"></i>
+                        <span>Primary Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-primary disabled" >
+                        <span>Primary Button</span>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn lucen-btn-primary">
+                                <span>Primary Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-primary">
+                                <i class="bi bi-star"></i>
+                                <span>Primary Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-primary disabled" >
+                                <span>Primary Button</span>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Boton outline -->
+                <div class="demo-container">
+                    <h3>Outline</h3>
+                    <button class="lucen-btn lucen-btn-outline">
+                        <span>Outline Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-outline">
+                        <i class="bi bi-star"></i>
+                        <span>Outline Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-outline disabled" >
+                        <span>Outline Button</span>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn lucen-btn-outline">
+                                <span>Outline Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-outline">
+                                <i class="bi bi-star"></i>
+                                <span>Outline Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-outline disabled" >
+                                <span>Outline Button</span>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Boton Success -->
+                <div class="demo-container">
+                    <h3>Success</h3>
+                    <button class="lucen-btn lucen-btn-success">
+                        <span>Success Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-outline-success" >
+                        <i class="bi bi-check2"></i>
+                        <span>Success Button</span>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn lucen-btn-success">
+                                <span>Success Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-outline-success" >
+                                <i class="bi bi-check2"></i>
+                                <span>Success Button</span>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Boton Danger -->
+                <div class="demo-container">
+                    <h3>Danger</h3>
+                    <button class="lucen-btn lucen-btn-danger">
+                        <span>Danger Button</span>
+                    </button>
+                    <button class="lucen-btn lucen-btn-outline-danger" >
+                        <i class="bi bi-x"></i>
+                        <span>Danger Button</span>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn lucen-btn-danger">
+                                <span>Danger Button</span>
+                            </button>
+                            <button class="lucen-btn lucen-btn-outline-danger" >
+                                <i class="bi bi-x"></i>
+                                <span>Danger Button</span>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+            <!-- Boton as iconos -->
+                <div class="demo-container">
+                    <h3>Botones de iconos</h3>
+                    <button class="lucen-btn lucen-btn-icon">
+                        <i class="bi bi-gear"></i>
+                    </button>
+                    <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                        <i class="bi bi-star"></i>
+                    </button>
+                    <button class="lucen-btn lucen-btn-icon noback" id="sidebarCollapse">
+                        <i class="bi bi-list"></i>
+                    </button>
+                        <!-- Codigo -->
+                        <pre class="lucen-code-block">
+                            <code data-code='
+                            <button class="lucen-btn lucen-btn-icon">
+                                <i class="bi bi-gear"></i>
+                            </button>
+                            <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                                <i class="bi bi-star"></i>
+                            </button>
+                            <button class="lucen-btn lucen-btn-icon noback" id="sidebarCollapse">
+                                <i class="bi bi-list"></i>
+                            </button>
+                            ' class="code"></code>
+                        </pre>
+                </div>
+        </section>
+
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+<script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+    });
+</script>
+    
+</body> 
+</html>
+

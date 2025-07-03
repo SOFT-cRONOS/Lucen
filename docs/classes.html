@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Clases y Utilidades</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+</head>
+<body class="lucen-body">
+      
+<!-- Sidebar -->
+<div id="sidebar-container"></div>
+
+<!-- Main Content -->
+<main class="lucen-main st-app-main r-widget">
+    <!-- Sección de Clases -->
+    <section class="">
+        <h1 class="component-title">Clases de Utilidad</h1>
+        
+        <!-- Clases de Espaciado -->
+        <div class="demo-container">
+            <h3>Espaciado (Margin y Padding)</h3>
+            
+            <div class="lucen-card mb-4">
+                <div class="lucen-card-body">
+                    <h4 class="lucen-title">Margin</h4>
+                    <div class="lucen-alert m-0">m-0: Sin margen</div>
+                    <div class="lucen-alert m-2">m-2: Margen de 2rem</div>
+                    <div class="lucen-alert mt-4">mt-4: Margen superior de 32px</div>
+                    <div class="lucen-alert mb-3">mb-3: Margen inferior de 1.3rem</div>
+                    <div class="lucen-alert me-1">me-1: Margen derecho de 11px</div>
+                </div>
+            </div>
+            
+            <div class="lucen-card">
+                <div class="lucen-card-body">
+                    <h4 class="lucen-title">Padding</h4>
+                    <div class="lucen-alert p-0">p-0: Sin padding</div>
+                    <div class="lucen-alert lucen-p-sm">lucen-p-sm: Padding pequeño (6px)</div>
+                    <div class="lucen-alert lucen-p-md">lucen-p-md: Padding mediano (11px)</div>
+                    <div class="lucen-alert lucen-p-lg">lucen-p-lg: Padding grande (24px)</div>
+                    <div class="lucen-alert lucen-p-xl">lucen-p-xl: Padding extra grande (32px)</div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <!-- Margin -->
+                <div class="m-0">Sin margen</div>
+                <div class="m-2">Margen de 2rem</div>
+                <div class="mt-4">Margen superior de 32px</div>
+                <div class="mb-3">Margen inferior de 1.3rem</div>
+                <div class="me-1">Margen derecho de 11px</div>
+                
+                <!-- Padding -->
+                <div class="p-0">Sin padding</div>
+                <div class="lucen-p-sm">Padding pequeño (6px)</div>
+                <div class="lucen-p-md">Padding mediano (11px)</div>
+                <div class="lucen-p-lg">Padding grande (24px)</div>
+                <div class="lucen-p-xl">Padding extra grande (32px)</div>
+                ' class="code"></code>
+            </pre>
+        </div>
+        
+        <!-- Clases de Texto -->
+        <div class="demo-container">
+            <h3>Clases de Texto</h3>
+            
+            <div class="lucen-card mb-4">
+                <div class="lucen-card-body">
+                    <p class="text-muted">text-muted: Texto atenuado</p>
+                    <p class="text-centered">text-centered: Texto centrado</p>
+                    <p class="big">big: Texto grande (1.8rem)</p>
+                    <p class="medium">medium: Texto mediano (1.5rem)</p>
+                    <p class="normal">normal: Texto normal (1.3rem)</p>
+                    <p class="small">small: Texto pequeño (0.875rem)</p>
+                    <p class="micro">micro: Texto muy pequeño (0.775rem)</p>
+                </div>
+            </div>
+            
+            <div class="lucen-card lucen-bg-primary">
+                <div class="lucen-card-body text-light">
+                    <h4 class="lucen-title">text-light: Texto claro sobre fondo oscuro</h4>
+                    <p>Esta tarjeta usa la clase "text-light" para asegurar legibilidad.</p>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <p class="text-muted">Texto atenuado</p>
+                <p class="text-centered">Texto centrado</p>
+                <p class="big">Texto grande (1.8rem)</p>
+                <p class="medium">Texto mediano (1.5rem)</p>
+                <p class="normal">Texto normal (1.3rem)</p>
+                <p class="small">Texto pequeño (0.875rem)</p>
+                <p class="micro">Texto muy pequeño (0.775rem)</p>
+                
+                <!-- Texto claro -->
+                <div class="lucen-bg-primary text-light">
+                    <h4>Texto claro sobre fondo oscuro</h4>
+                    <p>Contenido legible sobre fondo oscuro</p>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </div>
+        
+        <!-- Clases de Fondo -->
+        <div class="demo-container">
+            <h3>Clases de Fondo</h3>
+            
+            <div class="cards-grid mb-4">
+                <div class="lucen-card lucen-bg-primary">
+                    <div class="lucen-card-body text-light">
+                        <h4>lucen-bg-primary</h4>
+                        <p>Fondo con gradiente primario</p>
+                    </div>
+                </div>
+                
+                <div class="lucen-card lucen-bg-success">
+                    <div class="lucen-card-body text-light">
+                        <h4>lucen-bg-success</h4>
+                        <p>Fondo verde de éxito</p>
+                    </div>
+                </div>
+                
+                <div class="lucen-card lucen-bg-danger">
+                    <div class="lucen-card-body text-light">
+                        <h4>lucen-bg-danger</h4>
+                        <p>Fondo rojo de error</p>
+                    </div>
+                </div>
+                
+                <div class="lucen-card gradient-background">
+                    <div class="lucen-card-body">
+                        <h4>gradient-background</h4>
+                        <p>Fondo con gradiente animado</p>
+                    </div>
+                </div>
+                
+                <div class="lucen-card acrylic">
+                    <div class="lucen-card-body">
+                        <h4>acrylic</h4>
+                        <p>Efecto acrílico con desenfoque</p>
+                    </div>
+                </div>
+                
+                <div class="lucen-card transparent">
+                    <div class="lucen-card-body">
+                        <h4>transparent</h4>
+                        <p>Fondo transparente sin bordes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <!-- Fondos de color -->
+                <div class="lucen-bg-primary text-light">
+                    <h4>Fondo primario</h4>
+                    <p>Contenido</p>
+                </div>
+                
+                <div class="lucen-bg-success text-light">
+                    <h4>Fondo de éxito</h4>
+                    <p>Contenido</p>
+                </div>
+                
+                <div class="lucen-bg-danger text-light">
+                    <h4>Fondo de peligro</h4>
+                    <p>Contenido</p>
+                </div>
+                
+                <!-- Efectos especiales -->
+                <div class="gradient-background">
+                    <h4>Gradiente animado</h4>
+                    <p>Contenido</p>
+                </div>
+                
+                <div class="acrylic">
+                    <h4>Efecto acrílico</h4>
+                    <p>Contenido</p>
+                </div>
+                
+                <div class="transparent">
+                    <h4>Transparente</h4>
+                    <p>Contenido</p>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </div>
+        
+        <!-- Clases de Layout -->
+        <div class="demo-container">
+            <h3>Clases de Layout</h3>
+            
+            <div class="lucen-card mb-4">
+                <div class="lucen-card-body">
+                    <h4 class="lucen-title">Flexbox</h4>
+                    
+                    <div class="row gap-2 mb-3">
+                        <div class="lucen-alert lucen-p-sm">row: Fila horizontal</div>
+                        <div class="lucen-alert lucen-p-sm">gap-2: Espacio entre elementos</div>
+                    </div>
+                    
+                    <div class="col gap-2">
+                        <div class="lucen-alert lucen-p-sm">col: Columna vertical</div>
+                        <div class="lucen-alert lucen-p-sm">flex-centered: Centrado vertical y horizontal</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lucen-card">
+                <div class="lucen-card-body">
+                    <h4 class="lucen-title">Grid</h4>
+                    
+                    <div class="cards-grid">
+                        <div class="lucen-card">
+                            <div class="lucen-card-body">
+                                <p>cards-grid: Crea un grid responsive</p>
+                            </div>
+                        </div>
+                        <div class="lucen-card">
+                            <div class="lucen-card-body">
+                                <p>Autoajusta columnas</p>
+                            </div>
+                        </div>
+                        <div class="lucen-card">
+                            <div class="lucen-card-body">
+                                <p>Mínimo 300px por columna</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <!-- Flexbox -->
+                <div class="row gap-2">
+                    <div>Elemento 1</div>
+                    <div>Elemento 2</div>
+                </div>
+                
+                <div class="col gap-2">
+                    <div>Elemento 1</div>
+                    <div>Elemento 2</div>
+                </div>
+                
+                <div class="flex-centered">
+                    <!-- Contenido centrado -->
+                </div>
+                
+                <!-- Grid -->
+                <div class="cards-grid">
+                    <div class="lucen-card">...</div>
+                    <div class="lucen-card">...</div>
+                    <div class="lucen-card">...</div>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </div>
+        
+        <!-- Clases de Tamaño -->
+        <div class="demo-container">
+            <h3>Clases de Tamaño</h3>
+            
+            <div class="row gap-2 mb-4">
+                <div class="col-sm lucen-card">
+                    <div class="lucen-card-body">
+                        <h4>col-sm</h4>
+                        <p>Ancho del 30%</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 lucen-card">
+                    <div class="lucen-card-body">
+                        <h4>col-md-4</h4>
+                        <p>Ancho del 40%</p>
+                    </div>
+                </div>
+                
+                <div class="col-md lucen-card">
+                    <div class="lucen-card-body">
+                        <h4>col-md</h4>
+                        <p>Ancho del 50%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row gap-2">
+                <div class="col-md-6 lucen-card">
+                    <div class="lucen-card-body">
+                        <h4>col-md-6</h4>
+                        <p>Ancho del 60%</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg lucen-card">
+                    <div class="lucen-card-body">
+                        <h4>col-lg</h4>
+                        <p>Ancho del 100%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Código -->
+            <pre class="lucen-code-block">
+                <code data-code='
+                <div class="row gap-2">
+                    <div class="col-sm">30% de ancho</div>
+                    <div class="col-md-4">40% de ancho</div>
+                    <div class="col-md">50% de ancho</div>
+                </div>
+                
+                <div class="row gap-2">
+                    <div class="col-md-6">60% de ancho</div>
+                    <div class="col-lg">100% de ancho</div>
+                </div>
+                ' class="code"></code>
+            </pre>
+        </div>
+    </section>
+</main>
+
+<!-- Widget Bar -->
+<div id="widgetbar-container"></div>
+
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    styeCode();
+    hljs.highlightAll();
+});
+</script>
+    
+</body> 
+</html>

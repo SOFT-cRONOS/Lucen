@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Colors & Themes</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .color-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
+            transition: all 0.2s ease;
+        }
+        
+        .color-swatch {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .color-info {
+            padding: 12px;
+            background-color: var(--lucen-background-primary);
+        }
+        
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .color-value {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--lucen-text-secondary);
+        }
+        
+        .theme-preview {
+            display: flex;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+        }
+        
+        .theme-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .theme-header {
+            padding: 12px;
+            background-color: var(--lucen-background-tertiary);
+            font-weight: 600;
+        }
+        
+        .theme-content {
+            flex: 1;
+            padding: 12px;
+            background-color: var(--lucen-background-primary);
+        }
+        
+        .theme-text {
+            margin-bottom: 8px;
+        }
+        
+        .theme-primary {
+            background-color: var(--lucen-primary);
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body class="lucen-body">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Colores -->
+        <section class="">
+            <h1 class="component-title">Color System</h1>
+            <p class="lucen-subtitle">The color palette and theme variables used in lucen UI</p>
+            
+            <!-- Primary Colors -->
+            <div class="demo-container">
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-primary);">
+                            <span>Primary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">--lucen-primary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-primary-light);">
+                            <span>Primary Light</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">--lucen-primary-light</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-primary-mlight);">
+                            <span>Primary Medium Light</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary M-Light</div>
+                            <div class="color-value">--lucen-primary-mlight</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-primary-ulight);">
+                            <span>Primary Ultra Light</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary U-Light</div>
+                            <div class="color-value">--lucen-primary-ulight</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-primary-dark); color: white;">
+                            <span>Primary Dark</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">--lucen-primary-dark</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Primary color variables */
+                    --lucen-primary: #0163bf;
+                    --lucen-primary-light: #4b9eec;
+                    --lucen-primary-mlight: #c3e1fd;
+                    --lucen-primary-ulight: #e3effa;
+                    --lucen-primary-dark: #03467a;
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Status Colors -->
+            <div class="demo-container">
+                <h3>Status Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-success); color: white;">
+                            <span>Success</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">--lucen-success</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-danger); color: white;">
+                            <span>Danger</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Danger</div>
+                            <div class="color-value">--lucen-danger</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-warning); color: white;">
+                            <span>Warning</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">--lucen-warning</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-info); color: white;">
+                            <span>Info</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Info</div>
+                            <div class="color-value">--lucen-info</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Status color variables */
+                    --lucen-success: #00cc6a;
+                    --lucen-danger: #e81123;
+                    --lucen-warning: #ffb900;
+                    --lucen-info: #b146c2;
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Text Colors -->
+            <div class="demo-container">
+                <h3>Text Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-text-primary); color: white;">
+                            <span>Primary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Text Primary</div>
+                            <div class="color-value">--lucen-text-primary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-text-secondary); color: white;">
+                            <span>Secondary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Text Secondary</div>
+                            <div class="color-value">--lucen-text-secondary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-text-tertiary);">
+                            <span>Tertiary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Text Tertiary</div>
+                            <div class="color-value">--lucen-text-tertiary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-text-white); color: #333;">
+                            <span>White</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Text White</div>
+                            <div class="color-value">--lucen-text-white</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Text color variables */
+                    --lucen-text-primary: #323130;
+                    --lucen-text-secondary: #605e5c;
+                    --lucen-text-tertiary: #a19f9d;
+                    --lucen-text-white: #ffffff;
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Background Colors -->
+            <div class="demo-container">
+                <h3>Background Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-background-primary);">
+                            <span>Primary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Background Primary</div>
+                            <div class="color-value">--lucen-background-primary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-background-secondary);">
+                            <span>Secondary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Background Secondary</div>
+                            <div class="color-value">--lucen-background-secondary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-background-tertiary);">
+                            <span>Tertiary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Background Tertiary</div>
+                            <div class="color-value">--lucen-background-tertiary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-background-quaternary);">
+                            <span>Quaternary</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Background Quaternary</div>
+                            <div class="color-value">--lucen-background-quaternary</div>
+                        </div>
+                    </div>
+                    
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--lucen-background-dark); color: white;">
+                            <span>Dark</span>
+                        </div>
+                        <div class="color-info">
+                            <div class="color-name">Background Dark</div>
+                            <div class="color-value">--lucen-background-dark</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Background color variables */
+                    --lucen-background-primary: #ffffff;
+                    --lucen-background-secondary: #f3f2f1;
+                    --lucen-background-tertiary: #e6e6e6;
+                    --lucen-background-quaternary: #e1e1e1;
+                    --lucen-background-dark: #201f1e;
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Theme Preview -->
+            <div class="demo-container">
+                <h3>Theme Preview</h3>
+                <p class="lucen-subtitle">Light and dark theme color schemes</p>
+                
+                <div class="theme-preview" data-theme="light">
+                    <div class="theme-section">
+                        <div class="theme-header">Light Theme</div>
+                        <div class="theme-content">
+                            <div class="theme-primary">Primary Color</div>
+                            <div class="theme-text" style="color: var(--lucen-text-primary);">Primary Text</div>
+                            <div class="theme-text" style="color: var(--lucen-text-secondary);">Secondary Text</div>
+                            <div class="theme-text" style="color: var(--lucen-text-tertiary);">Tertiary Text</div>
+                        </div>
+                    </div>
+                    
+                    <div class="theme-section" data-theme="dark">
+                        <div class="theme-header">Dark Theme</div>
+                        <div class="theme-content">
+                            <div class="theme-primary">Primary Color</div>
+                            <div class="theme-text" style="color: var(--lucen-text-primary);">Primary Text</div>
+                            <div class="theme-text" style="color: var(--lucen-text-secondary);">Secondary Text</div>
+                            <div class="theme-text" style="color: var(--lucen-text-tertiary);">Tertiary Text</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Light theme variables */
+                    [data-theme="light"] {
+                        --lucen-primary: #0163bf;
+                        --lucen-primary-light: #4b9eec;
+                        --lucen-primary-mlight: #c3e1fd;
+                        --lucen-primary-ulight: #e3effa;
+                        --lucen-primary-dark: #03467a;
+                        --lucen-text-primary: #323130;
+                        --lucen-text-secondary: #605e5c;
+                        --lucen-text-tertiary: #a19f9d;
+                        --lucen-background-primary: #ffffff;
+                        --lucen-background-secondary: #f3f2f1;
+                        --lucen-background-tertiary: #e6e6e6;
+                    }
+                    
+                    /* Dark theme variables */
+                    [data-theme="dark"] {
+                        --lucen-primary: #0163bf;
+                        --lucen-primary-light: #4b9eec;
+                        --lucen-primary-mlight: #063f70;
+                        --lucen-primary-ulight: #04223d;
+                        --lucen-text-primary: #ffffff;
+                        --lucen-text-secondary: #a19f9d;
+                        --lucen-text-tertiary: #797775;
+                        --lucen-background-primary: #201f1e;
+                        --lucen-background-secondary: #2d2c2c;
+                        --lucen-background-tertiary: #3b3a39;
+                    }
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Gradient Backgrounds -->
+            <div class="col-lg">
+                <h3>Gradient Backgrounds</h3>
+                
+                <div class="cards-grid">
+                    <div class="lucen-card gradient-background" style="height: 150px;">
+                        <div class="lucen-card-body text-light">
+                            <h4>Animated Gradient</h4>
+                            <p>Uses gradient-animation keyframes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="lucen-card gradient-background-statick" style="height: 150px;">
+                        <div class="lucen-card-body text-light">
+                            <h4>Static Gradient</h4>
+                            <p>Fixed gradient background</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    /* Gradient animation */
+                    .gradient-background {
+                        background: linear-gradient(307deg, 
+                            var(--lucen-tertiary-light), 
+                            var(--lucen-background-secondary), 
+                            var(--lucen-primary-ulight), 
+                            var(--lucen-background-secondary), 
+                            var(--lucen-tertiary-ulight));
+                        background-size: 300% 300%;
+                        animation: gradient-animation 40s ease infinite;
+                    }
+                    
+                    /* Static gradient */
+                    .gradient-background-statick {
+                        background: linear-gradient(307deg, 
+                            var(--lucen-tertiary-mlight) 0%, 
+                            var(--lucen-tertiary-mlight) 10%, 
+                            var(--lucen-background-secondary) 20%, 
+                            var(--lucen-background-secondary) 80%, 
+                            var(--lucen-primary-ulight) 90%, 
+                            var(--lucen-primary-ulight) 100%);
+                        background-size: 100% 100%;
+                        background-attachment: fixed;
+                    }
+                    
+                    @keyframes gradient-animation {
+                        0% { background-position: 0% 0%; }
+                        40% { background-position: 30% 15%; }
+                        50% { background-position: 100% 70%; }
+                        60% { background-position: 30% 15%; }
+                        100% { background-position: 0% 0%; }
+                    }
+                    ' class="code"></code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+        
+        // Update theme preview when theme changes
+        document.addEventListener('themeChanged', (e) => {
+            const preview = document.querySelector('.theme-preview');
+            if (preview) {
+                preview.setAttribute('data-theme', e.detail.theme);
+            }
+        });
+    });
+</script>
+    
+</body> 
+</html>

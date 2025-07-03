@@ -1,0 +1,177 @@
+@use 'variables' as *;
+
+// Botones base
+.lucen-btn {
+  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $lucen-spacing-sm $lucen-spacing-md;
+  background-color: transparent;
+  color: $lucen-text-primary;
+  border: none;
+  border-radius: $lucen-border-radius;
+  cursor: pointer;
+  transition: $lucen-transition;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  text-decoration: none;
+
+  span {
+    font-size: 15px;
+  }
+
+  &:hover {
+    background-color: $lucen-background-tertiary;
+    color: $lucen-text-primary;
+    box-shadow: $lucen-box-shadow;
+  }
+
+  &:active {
+    background-color: $lucen-background-tertiary;
+    transform: translateY(1px);
+    box-shadow: $lucen-box-shadow;
+  }
+}
+
+// Variantes de botones
+.lucen-btn-primary {
+  background-color: $lucen-primary !important;
+  color: $lucen-text-white !important;
+
+  &:hover {
+    background-color: $lucen-primary-light !important;
+    color: $lucen-text-white !important;
+  }
+}
+
+.lucen-btn-outline {
+  background-color: transparent;
+  color: var(--dark);
+  border: 1px solid $lucen-border-color;
+
+  &:hover {
+    background-color: $lucen-border-color;
+  }
+}
+
+.lucen-btn-success {
+  background-color: $lucen-success;
+  color: $lucen-text-white;
+}
+
+.lucen-btn-success:hover, .lucen-btn-outline-success:hover {
+  background-color: $lucen-success-light;
+  color: $lucen-success;
+}
+
+.lucen-btn-outline-success {
+  background-color: $lucen-background-primary;
+  color: $lucen-success;
+  border: 1px solid $lucen-success;
+}
+
+.lucen-btn-danger {
+  background-color: $lucen-danger;
+  color: $lucen-text-white;
+}
+
+.lucen-btn-danger:hover, .lucen-btn-outline-danger:hover {
+  background-color: $lucen-danger-light;
+  color: $lucen-danger;
+}
+
+.lucen-btn-outline-danger {
+  background-color: $lucen-background-primary;
+  color: $lucen-danger;
+  border: 1px solid $lucen-danger;
+}
+
+.lucen-btn-warning {
+  background-color: $lucen-warning;
+  color: $lucen-text-white;
+}
+
+.lucen-btn-warning:hover, .lucen-btn-outline-warning:hover {
+  background-color: $lucen-warning-light;
+  color: $lucen-warning;
+}
+
+.lucen-btn-outline-warning {
+  background-color: $lucen-background-primary;
+  color: $lucen-warning;
+  border: 1px solid $lucen-warning;
+}
+
+.lucen-btn-info {
+  background-color: $lucen-info;
+  color: $lucen-text-white;
+}
+
+.lucen-btn-info:hover, .lucen-btn-outline-info:hover {
+  background-color: $lucen-info-light;
+  color: $lucen-info;
+}
+
+.lucen-btn-outline-info {
+  background-color: $lucen-background-primary;
+  color: $lucen-info;
+  border: 1px solid $lucen-info;
+}
+
+// Botones icono
+.lucen-btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $lucen-text-secondary;
+
+  &:hover {
+    background-color: $lucen-background-secondary;
+    color: $lucen-text-primary;
+  }
+
+  &:active {
+    background-color: $lucen-background-tertiary;
+  }
+
+  &.noback:hover {
+    background-color: $lucen-background-tertiary;
+    box-shadow: none;
+  }
+}
+
+// Estado disabled
+.disabled {
+  cursor: not-allowed !important;
+  filter: contrast(0.6) !important;
+  background-color: $lucen-background-secondary;
+  color: $lucen-text-tertiary;
+
+  &:hover {
+    color: $lucen-text-white;
+  }
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  transition: $lucen-transition;
+  z-index: 1000;
+  box-shadow: $lucen-box-shadow-float;
+
+  // i {
+  //   font-size: 1.5rem;
+  // }
+
+  .lucen-menubar-dropdown {
+    margin: .3rem;
+  }
+}

@@ -1,0 +1,131 @@
+@use 'variables' as *;
+
+// Checkbox
+.lucen-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.custom-box {
+  width: 20px;
+  height: 20px;
+  border-radius: $lucen-border-radius;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  border: 1.5px solid $lucen-background-quaternary;
+
+  &::after {
+    content: "";
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: scale(0) rotate(45deg);
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    top: 3px;
+    left: 7px;
+    position: absolute;
+  }
+}
+
+.lucen-checkbox {
+  input:checked + .custom-box {
+    background-color: $lucen-primary;
+    transform: scale(1.1);
+    
+    &::after {
+      transform: scale(1) rotate(45deg);
+    }
+  }
+
+  input:disabled + .custom-box {
+    background-color: #ccc;
+    cursor: not-allowed;
+    
+    &::after {
+      border-color: white;
+      opacity: 0.5;
+    }
+  }
+}
+
+// Checkbox touch
+.lucen-checkbox-touch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: $lucen-background-secondary;
+  border: 2px solid $lucen-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.checkmark-icon {
+  color: $lucen-text-white;
+  width: 26px;
+  height: 26;
+  stroke-dasharray: 26;
+  stroke-dashoffset: 16;
+  opacity: 0;
+  transition: stroke-dashoffset 0.3s ease, opacity 0.2s ease;
+}
+
+.lucen-checkbox-touch {
+  input:checked ~ .checkmark {
+    background-color: $lucen-primary-light;
+    border-color: $lucen-background-primary;
+  }
+
+  input:checked ~ .checkmark .checkmark-icon {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  input:disabled ~ .checkmark {
+    background-color: #ccc;
+    cursor: not-allowed;
+    border: 2px solid $lucen-background-primary;
+  }
+
+  input:disabled ~ .checkmark .checkmark-icon {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}

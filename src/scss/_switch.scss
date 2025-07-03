@@ -1,0 +1,125 @@
+@use 'variables' as *;
+
+// Switches
+.lucen-switch {
+  display: flex;
+  align-items: center;
+  gap: $lucen-spacing-sm;
+  cursor: pointer;
+
+  input {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background-color: $lucen-background-secondary;
+    border-radius: 10px;
+    transition: $lucen-transition;
+    cursor: pointer;
+    border: 1px solid $lucen-text-tertiary;
+
+    &:checked {
+      background-color: $lucen-primary;
+      border: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $lucen-text-tertiary;
+      top: 2px;
+      left: 2px;
+      transition: $lucen-transition;
+    }
+
+    &:checked::before {
+      left: 22px;
+      background-color: $lucen-background-primary;
+      top: 3px;
+    }
+
+    // Estilo específico para theme toggle
+    &#theme-toggle {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $lucen-text-primary;
+      }
+
+      &:not(:checked)::after {
+        content: '☀️';
+        left: 22px;
+      }
+
+      &:checked::after {
+        content: '🌙';
+        left: 5px;
+      }
+    }
+  }
+}
+
+// Variante de switch
+.lucen-switch-variant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: $lucen-spacing-md 0;
+
+  .switch-label {
+    order: 1;
+  }
+
+  .lucen-switch {
+    order: 2;
+  }
+}
+
+.lucen-switch-minimal {
+  input {
+    width: 36px;
+    height: 18px;
+    background-color: var(--lucen-background-tertiary);
+    
+    &::before {
+      width: 12px;
+      height: 12px;
+      top: 2px;
+      left: 2px;
+      background-color: var(--lucen-text-primary);
+    }
+    
+    &:checked {
+      background-color: var(--lucen-primary);
+      
+      &::before {
+        left: 20px;
+        background-color: var(--lucen-background-primary);
+      }
+    }
+  }
+}
+
+.theme-toggle-btn {
+
+
+  .theme-icon {
+    transition: var(--lucen-transition);
+  }
+  
+  .theme-text {
+    transition: var(--lucen-transition);
+  }
+
+  // Estilos cuando está en dark mode
+  html[data-theme="dark"] & {
+    .theme-icon {
+      transform: rotate(180deg);
+    }
+  }
+}

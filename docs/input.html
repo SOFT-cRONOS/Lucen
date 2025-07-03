@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Inputs</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+        /* Estilos adicionales para inputs con iconos */
+
+    </style>
+</head>
+<body class="lucen-body">
+      
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Inputs -->
+        <section class="">
+            <h1 class="component-title">Inputs</h1>
+            
+            <!-- Input básico -->
+            <div class="col-md-6">
+                <h3>Input básico</h3>
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="basic-input">Nombre</label>
+                    <input type="text" class="lucen-input" id="basic-input" placeholder="Ingrese su nombre">
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="disabled-input">Input deshabilitado</label>
+                    <input type="text" class="lucen-input" id="disabled-input" placeholder="Input deshabilitado" disabled>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="basic-input">Nombre</label>
+                        <input type="text" class="lucen-input" id="basic-input" placeholder="Ingrese su nombre">
+                    </div>
+                    
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="disabled-input">Input deshabilitado</label>
+                        <input type="text" class="lucen-input" id="disabled-input" placeholder="Input deshabilitado" disabled>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Input con iconos -->
+            <div class="col-md-6">
+                <h3>Input con iconos</h3>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="left-icon-input">Icono a la izquierda</label>
+                    <div class="input-with-icon">
+                        <i class="bi bi-person left"></i>
+                        <input type="text" class="lucen-input" id="left-icon-input" placeholder="Usuario">
+                    </div>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="right-icon-input">Icono a la derecha</label>
+                    <div class="input-with-icon">
+                        <i class="bi bi-search right"></i>
+                        <input type="text" class="lucen-input right-icon" id="right-icon-input" placeholder="Buscar...">
+                    </div>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="both-icons-input">Iconos a ambos lados</label>
+                    <div class="input-with-icon">
+                        <i class="bi bi-envelope left"></i>
+                        <input type="email" class="lucen-input" id="both-icons-input" placeholder="Email">
+                        <i class="bi bi-check-circle right" style="color: var(--lucen-success);"></i>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Icono a la izquierda -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="left-icon-input">Icono a la izquierda</label>
+                        <div class="input-with-icon">
+                            <i class="bi bi-person left"></i>
+                            <input type="text" class="lucen-input" id="left-icon-input" placeholder="Usuario">
+                        </div>
+                    </div>
+                    
+                    <!-- Icono a la derecha -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="right-icon-input">Icono a la derecha</label>
+                        <div class="input-with-icon">
+                            <i class="bi bi-search right"></i>
+                            <input type="text" class="lucen-input right-icon" id="right-icon-input" placeholder="Buscar...">
+                        </div>
+                    </div>
+                    
+                    <!-- Iconos a ambos lados -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="both-icons-input">Iconos a ambos lados</label>
+                        <div class="input-with-icon">
+                            <i class="bi bi-envelope left"></i>
+                            <input type="email" class="lucen-input" id="both-icons-input" placeholder="Email">
+                            <i class="bi bi-check-circle right" style="color: var(--lucen-success);"></i>
+                        </div>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Input con validación -->
+            <div class="col-md-6">
+                <h3>Validación de inputs</h3>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="valid-input">Input válido</label>
+                    <input type="text" class="lucen-input is-valid" id="valid-input" placeholder="Input válido">
+                    <div class="lucen-valid-feedback">¡Este campo es válido!</div>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="invalid-input">Input inválido</label>
+                    <input type="text" class="lucen-input is-invalid" id="invalid-input" placeholder="Input inválido">
+                    <div class="lucen-invalid-feedback">Este campo es requerido</div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Input válido -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="valid-input">Input válido</label>
+                        <input type="text" class="lucen-input is-valid" id="valid-input" placeholder="Input válido">
+                        <div class="lucen-valid-feedback">¡Este campo es válido!</div>
+                    </div>
+                    
+                    <!-- Input inválido -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="invalid-input">Input inválido</label>
+                        <input type="text" class="lucen-input is-invalid" id="invalid-input" placeholder="Input inválido">
+                        <div class="lucen-invalid-feedback">Este campo es requerido</div>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Input con botón -->
+            <div class="col-md-6">
+                <h3>Input con botón</h3>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="button-input">Buscar producto</label>
+                    <div class="input-with-button">
+                        <input type="text" class="lucen-input" id="button-input" placeholder="Ingrese término de búsqueda">
+                        <button class="lucen-btn lucen-btn-primary">
+                            <i class="bi bi-search"></i>
+                            <span>Buscar</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="button-input-icon">Suscribirse</label>
+                    <div class="input-with-button">
+                        <input type="email" class="lucen-input" id="button-input-icon" placeholder="Ingrese su email">
+                        <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Input con botón de texto -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="button-input">Buscar producto</label>
+                        <div class="input-with-button">
+                            <input type="text" class="lucen-input" id="button-input" placeholder="Ingrese término de búsqueda">
+                            <button class="lucen-btn lucen-btn-primary">
+                                <i class="bi bi-search"></i>
+                                <span>Buscar</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Input con botón de icono -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="button-input-icon">Suscribirse</label>
+                        <div class="input-with-button">
+                            <input type="email" class="lucen-input" id="button-input-icon" placeholder="Ingrese su email">
+                            <button class="lucen-btn lucen-btn-icon lucen-btn-primary">
+                                <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Diferentes tipos de input -->
+            <div class="col-md-6">
+                <h3>Diferentes tipos de input</h3>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="email-input">Email</label>
+                    <input type="email" class="lucen-input" id="email-input" placeholder="ejemplo@email.com">
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="right-icon-input">Icono a la derecha</label>
+                    <div class="input-with-icon">
+                        <i class="bi bi-key right"></i>
+                        <input  type="password" class="lucen-input right-icon" id="right-icon-input" placeholder="Ingresa tu contraseña">
+                    </div>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="number-input">Número</label>
+                    <input type="number" class="lucen-input" id="number-input" placeholder="Ingrese un número">
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="date-input">Fecha</label>
+                    <input type="date" class="lucen-input" id="date-input">
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Email -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="email-input">Email</label>
+                        <input type="email" class="lucen-input" id="email-input" placeholder="ejemplo@email.com">
+                    </div>
+                    
+                    <!-- Contraseña -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="password-input">Contraseña</label>
+                        <input type="password" class="lucen-input" id="password-input" placeholder="Ingrese su contraseña">
+                    </div>
+                    
+                    <!-- Número -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="number-input">Número</label>
+                        <input type="number" class="lucen-input" id="number-input" placeholder="Ingrese un número">
+                    </div>
+                    
+                    <!-- Fecha -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="date-input">Fecha</label>
+                        <input type="date" class="lucen-input" id="date-input">
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+            
+            <!-- Textarea y select -->
+            <div class="col-md-6">
+                <h3>Textarea y Select</h3>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="textarea-input">Mensaje</label>
+                    <textarea class="lucen-textarea" id="textarea-input" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                
+                <div class="lucen-form-group">
+                    <label class="lucen-label" for="select-input">País</label>
+                    <select class="lucen-select" id="select-input">
+                        <option value="">Seleccione un país</option>
+                        <option value="AR">Argentina</option>
+                        <option value="BR">Brasil</option>
+                        <option value="CL">Chile</option>
+                        <option value="UY">Uruguay</option>
+                    </select>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                    <!-- Textarea -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="textarea-input">Mensaje</label>
+                        <textarea class="lucen-textarea" id="textarea-input" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    
+                    <!-- Select -->
+                    <div class="lucen-form-group">
+                        <label class="lucen-label" for="select-input">País</label>
+                        <select class="lucen-select" id="select-input">
+                            <option value="">Seleccione un país</option>
+                            <option value="AR">Argentina</option>
+                            <option value="BR">Brasil</option>
+                            <option value="CL">Chile</option>
+                            <option value="UY">Uruguay</option>
+                        </select>
+                    </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+
+            <!-- App animated select -->
+            <div class="col-md-6">
+                <h3>App animated select</h3>
+            
+                <div class="lucen-select app-select">
+                    <div class="lucen-select-trigger">
+                        <span class="lucen-select-selected">Selecciona una opción</span>
+                        <i class="bi bi-chevron-down lucen-select-arrow"></i>
+                    </div>
+                    <div class="lucen-select-dropdown">
+                        <div class="lucen-select-option" data-value="1">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Opción 1</span>
+                        </div>
+                        <div class="lucen-select-option" data-value="2">
+                            <i class="bi bi-file-earmark-image"></i>
+                            <span>Opción 2</span>
+                        </div>
+                        <div class="lucen-select-divider"></div>
+                        <div class="lucen-select-option" data-value="3">
+                            <i class="bi bi-file-earmark-pdf"></i>
+                            <span>Opción 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Código -->
+                <pre class="lucen-code-block">
+                    <code data-code='
+                <div class="lucen-select app-select">
+                    <div class="lucen-select-trigger">
+                        <span class="lucen-select-selected">Selecciona una opción</span>
+                        <i class="bi bi-chevron-down lucen-select-arrow"></i>
+                    </div>
+                    <div class="lucen-select-dropdown">
+                        <div class="lucen-select-option" data-value="1">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Opción 1</span>
+                        </div>
+                        <div class="lucen-select-option" data-value="2">
+                            <i class="bi bi-file-earmark-image"></i>
+                            <span>Opción 2</span>
+                        </div>
+                        <div class="lucen-select-divider"></div>
+                        <div class="lucen-select-option" data-value="3">
+                            <i class="bi bi-file-earmark-pdf"></i>
+                            <span>Opción 3</span>
+                        </div>
+                    </div>
+                </div>
+                    ' class="code"></code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+    });
+</script>
+    
+</body> 
+</html>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal educativo de ESSA - Acceso a nube personal, correo electrónico y sistema de chat para personal y alumnos">
+    <meta name="keywords" content="ESSA, educación, nube, correo, chat, portal educativo">
+    <meta name="author" content="Softcronos">
+    <title>Portal ESSA - Acceso a servicios educativos</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/lucen-ui.css">
+    
+    <style>
+        :root {
+            --primary: #242c4f;
+            --primary-push: #2f3966;
+            --secondary: #e9ba5e;
+            --accent: #ff0f0f;
+            --tertiary: #006c85;
+            --grey: #ececec;
+            --greypush: #e2e2e2;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --box-shadow-bg:  0 10px 50px rgba(0, 0, 0, 0.4) !important;
+            --box-shadow-md:  0 2px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            color: var(--dark);
+        }
+        
+        .acrylic {
+            display: flex;
+            background: inherit;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4)!important;
+        }
+
+        /* lucen Design Elements */
+        .lucen-card {
+            border: none;
+            border-radius: 8px;
+            /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                        0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                        0 12.5px 10px rgba(0, 0, 0, 0.035),
+                        0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                        0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                        0 100px 80px rgba(0, 0, 0, 0.07); */
+            box-shadow: var(--box-shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .lucen-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4.8px 3.2px rgba(0, 0, 0, 0.03),
+                        0 8.7px 7.3px rgba(0, 0, 0, 0.038),
+                        0 14.5px 12px rgba(0, 0, 0, 0.045),
+                        0 26.3px 21.9px rgba(0, 0, 0, 0.052),
+                        0 49.8px 41.4px rgba(0, 0, 0, 0.06),
+                        0 120px 100px rgba(0, 0, 0, 0.08);
+        }
+        
+        .btn {
+            position: relative;
+            overflow: hidden;
+            height: 33px;
+            vertical-align: middle;
+            padding: 6px 11px;
+            gap: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-lucen-primary {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: rgba(255,255,255,0.08);
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+            border-bottom-color: rgba(0,0,0,0.8);
+        }
+        
+        .btn-lucen-primary:hover {
+            background-color: var(--primary-push);
+            color: white;
+        }
+
+        .btn-lucen-secondary {
+            background-color: var(--primary);
+            color: var(--light);
+            border-color: rgba(255,255,255,0.08);
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+            border-bottom-color: rgba(0,0,0,0.8);
+        }
+        
+        .btn-lucen-secondary:hover {
+            background-color: var(--primary-push);
+            color: white;
+        }
+
+        .btn-lucen-outline {
+            background-color: transparent;
+            color: var(--dark);
+            border-color: var(--greypush);
+        }
+        
+        .btn-lucen-outline:hover {
+            background-color: var(--grey);
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        /* Navbar */
+        .navbar {
+            color: var(--dark);
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+            transition: all 0.4s ease,
+        }
+
+        .navbar .nav-link {
+            color: var(--dark);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(36, 44, 79, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease,
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--light);
+        }
+
+        .navbar.scrolled .nav-link:hover {
+            color: var(--light);
+            background-color: rgba(36, 44, 79, 0.897);
+        }
+        .navbar.scrolled .navbar-brand img {
+            color: var(--light)!important;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            color: var(--dark);
+        }
+        
+        .nav-link {
+            margin: 0 8px;
+            padding: 8px 12px !important;
+            border-radius: 4px;
+            
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--grey);
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Hero Slider */
+        .hero-slide {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            
+        }
+        
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(36, 44, 79, 0.8) 0%, rgba(0, 108, 133, 0.6) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            /* background-color: var(--light); */
+            /* background: linear-gradient(white, var(--grey)); */
+            padding: 60px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            color: var(--tertiary);
+            font-weight: 500;
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            padding: 30px 0;
+            background-color: white;
+            padding-bottom: 80px;
+        }
+        
+        .service-card {
+            height: 100%;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Videos Section */
+        .videos-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .video-card {
+            cursor: pointer;
+            margin-bottom: 5rem;
+            box-shadow: var(--box-shadow-md);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover .play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+            
+        }
+        
+        /* Action Buttons */
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .action-btn i {
+            font-size: 1.5rem;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-slide {
+                height: 400px;
+            }
+            
+            .navbar-collapse {
+                background-color: var(--primary);
+                padding: 15px;
+                border-radius: 0 0 8px 8px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-slide {
+                height: 350px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-slide {
+                height: 300px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50?text=ESSA+Logo" alt="ESSA">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#social">Social</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#estudio">Estudio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cuerpo">Cuerpo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://contactos.essa.edu.ar/register">Solicitar cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tutoriales">Tutoriales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Slider -->
+    <div class="container mt-4">
+        <div id="heroCarousel" class="carousel slide acrylic" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide d-flex align-items-center" style="background-image: url('assets/img/nextcloud.webp')">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <!-- Columna para el texto (derecha) -->
+                                <div class="col order-md-2 pe-1" data-aos="fade-left">
+                                    <div class="text-center text-white p-4 p-md-5">
+                                        <h2>NUBE PERSONAL</h2>
+                                        <p class="lead">Ingresa a tus archivos privados y archivos compartidos con tu oficina</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="hero-slide" style="background-image: url('https://source.unsplash.com/random/1920x1080/?email');">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h2 data-aos="fade-right">CORREO ELECTRÓNICO</h2>
+                                <p class="lead" data-aos="fade-right" data-aos-delay="100">Hace uso del sistema de correo electrónico local del establecimiento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="hero-slide d-flex align-items-center" style="background-image: url('assets/img/blur_one.jpg'); min-height: 500px;">
+                        <div class="container ms-5 me-5">
+                            <div class="row align-items-center">
+                                <!-- Columna para el texto (derecha) -->
+                                <div class="col-md-6 order-md-2 pe-1" data-aos="fade-left">
+                                    <div class="text-start text-white p-4 p-md-5">
+                                        <h2>ROCKET CHAT</h2>
+                                        <p class="lead">Chatea en vivo con el resto del personal entre salas de las diferentes oficinas o con el resto de la escuela</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Columna para la imagen PNG (izquierda) -->
+                                <div class="col-md-6 order-md-1" data-aos="fade-right">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="assets/img/rocketchat_demo.png" alt="RocketChat Demo" class="img-fluid" style="max-height: 300px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up">
+                    <div class="stat-number countup" data-count="300">0</div>
+                    <div class="stat-label">P.Militar</div>
+                </div>
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number countup" data-count="400">0</div>
+                    <div class="stat-label">Docentes</div>
+                </div>
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number countup" data-count="200">0</div>
+                    <div class="stat-label">AGCV</div>
+                </div>
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number countup" data-count="200">0</div>
+                    <div class="stat-label">Aulas</div>
+                </div>
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number countup" data-count="34">0</div>
+                    <div class="stat-label">Cursos</div>
+                </div>
+                <div class="col-md-2 col-6 stat-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-number countup" data-count="499">0</div>
+                    <div class="stat-label">Alumnos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Servicios de Comunicación</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-cloud"></i> -->
+                                <img src="assets/img/logo_nextcloud.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Nube Personal</h4>
+                            <p class="card-text">Accede a tus archivos desde cualquier lugar y comparte documentos con tu equipo.</p>
+                            <div class="d-grid gap-2">
+                                <a href="https://cloud.essa.edu.ar/" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-envelope"></i> -->
+                                <img src="assets/img/logo_mail.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Correo Institucional</h4>
+                            <p class="card-text">Sistema de correo electrónico seguro para comunicación interna y externa.</p>
+                            <div class="d-grid gap-2">
+                                <a href="https://mail.essa.edu.ar/" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-chat-square-text"></i> -->
+                                <img src="assets/img/logo_rocketchat.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Rocket Chat</h4>
+                            <p class="card-text">Comunicación en tiempo real con todos los miembros de la institución.</p>
+                            <div class="d-grid gap-2">
+                                <a href="https://ipa.essa.edu.ar/" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-journal-text"></i> -->
+                                <img src="assets/img/lara_logo.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Contactos</h4>
+                            <p class="card-text">Acceso al directorio de todo el personal, encontra la oficina correcta.</p>
+                            <div class="d-grid gap-2">
+                                <a href="https://contactos.essa.edu.ar/" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section 2-->
+    <section class="cards-section" style="background-color: var(--primary)";>
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="color:var(--light)">Apps de Informacion</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-cloud"></i> -->
+                                <img src="assets/img/logo_nextcloud.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Nube Personal</h4>
+                            <p class="card-text">Accede a tus archivos desde cualquier lugar y comparte documentos con tu equipo.</p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-envelope"></i> -->
+                                <img src="assets/img/logo_mail.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Correo Institucional</h4>
+                            <p class="card-text">Sistema de correo electrónico seguro para comunicación interna y externa.</p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-chat-square-text"></i> -->
+                                <img src="assets/img/logo_rocketchat.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Rocket Chat</h4>
+                            <p class="card-text">Comunicación en tiempo real con todos los miembros de la institución.</p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card service-card lucen-card h-100">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <!-- <i class="bi bi-journal-text"></i> -->
+                                <img src="assets/img/lara_logo.webp" style="max-height: 80px;">
+                            </div>
+                            <h4 class="card-title">Contactos</h4>
+                            <p class="card-text">Acceso al directorio de todo el personal, encontra la oficina correcta.</p>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-lucen-primary">Ingresar</a>
+                                <a href="#" class="btn btn-lucen-outline">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Videos Informativos</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="GEi2VDviiwE">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/GEi2VDviiwE/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Cómo acceder a la nube</h5>
+                                                <p class="card-text">Tutorial paso a paso para usar el servicio de almacenamiento en la nube.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="1-gDCE3OMgw">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/1-gDCE3OMgw/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Configurar correo electrónico</h5>
+                                                <p class="card-text">Aprende a configurar tu cuenta de correo en diferentes dispositivos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="lmFMYD8bwHw">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/lmFMYD8bwHw/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Uso de Rocket Chat</h5>
+                                                <p class="card-text">Guía completa para comunicarte con el sistema de mensajería interna.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="dV8OqkcgOiE">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/dV8OqkcgOiE/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Acceso a biblioteca digital</h5>
+                                                <p class="card-text">Cómo encontrar y utilizar los recursos de la biblioteca en línea.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="HDfuKjyVkJ0">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/HDfuKjyVkJ0/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Seguridad en línea</h5>
+                                                <p class="card-text">Consejos para mantener segura tu cuenta y datos personales.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card video-card" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="8JZQw0uD5nk">
+                                            <div class="video-thumbnail">
+                                                <img src="https://i.ytimg.com/vi/8JZQw0uD5nk/hqdefault.jpg" alt="Video thumbnail">
+                                                <div class="play-icon">
+                                                    <i class="bi bi-play-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Novedades del portal</h5>
+                                                <p class="card-text">Descubre las últimas actualizaciones y mejoras del portal ESSA.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-grid gap-3">
+                        <a href="https://contactos.essa.edu.ar/register" class="action-btn lucen-card" style="background-color: var(--primary);" data-aos="fade-up">
+                            <i class="bi bi-person-plus"></i>
+                            <span>Solicitar cuenta</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="https://contactos.essa.edu.ar/index" class="action-btn lucen-card" style="background-color: var(--tertiary);" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-book"></i>
+                            <span>Ver guía de contactos</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="#" class="action-btn lucen-card" style="background-color: var(--accent);" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <span>Informar error</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">
+                PORTAL - ESSA &copy; 2025 - 
+                <strong>
+                    <a class="text-decoration-none text-primary" href="https://www.softcronos.com.ar" target="_blank">SoftCronos</a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- CountUp JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    
+    <!-- Waypoints JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.min.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // CountUp functionality
+        document.addEventListener('DOMContentLoaded', function() {
+
+            CounterObjet();
+
+            VideoModal();
+
+            SmoothScroll();
+
+            const navbar = document.querySelector('.navbar');       
+             
+            window.addEventListener('scroll', function() {
+                // NavBar sclorr color change
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Asegurar de que el navbar tenga el estado correcto al cargar
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            }
+
+        });
+
+
+        function SmoothScroll() {
+            // Smooth scrolling for navbar links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        function VideoModal() {
+            // Video modal functionality
+            const videoModal = document.getElementById('videoModal');
+            if (videoModal) {
+                videoModal.addEventListener('show.bs.modal', function(event) {
+                    const button = event.relatedTarget;
+                    const videoId = button.getAttribute('data-video-id');
+                    const iframe = document.getElementById('videoFrame');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                });
+                
+                videoModal.addEventListener('hide.bs.modal', function() {
+                    const iframe = document.getElementById('videoFrame');
+                    iframe.src = '';
+                });
+            }
+        };
+
+        function CounterObjet() {
+            const countUpElements = document.querySelectorAll('.countup');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const count = parseInt(target.getAttribute('data-count'));
+                        const duration = 2000; // 2 seconds
+                        const increment = count / (duration / 16); // 60fps
+                        
+                        let current = 0;
+                        const updateCount = () => {
+                            current += increment;
+                            if (current < count) {
+                                target.textContent = Math.floor(current);
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                target.textContent = count;
+                            }
+                        };
+                        
+                        updateCount();
+                        observer.unobserve(target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            countUpElements.forEach(element => {
+                observer.observe(element);
+            });
+        };
+    </script>
+</body>
+</html>

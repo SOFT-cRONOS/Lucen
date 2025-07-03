@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lucen UI</title>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+    .chart-container {
+        position: relative;
+        height: 300px;
+        width: 100%;
+    }
+    
+    .stat-card {
+        min-height: 120px;
+    }
+    
+    .stat-icon {
+        font-size: 2.5rem;
+        opacity: 0.8;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+    
+    .stat-label {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+    </style>
+</head>
+<body class="lucen-body">
+      
+    <!-- Sidebar -->
+    <aside class="lucen-sidebar" id="sidebar">
+        <div class="lucen-sidebar-header">
+            <button class="lucen-btn lucen-btn-icon" id="sidebarCollapse">
+                <i class="bi bi-list"></i>
+            </button>
+            <h3>Dashboard</h3>
+        </div>
+        
+        <ul class="lucen-nav">
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link active">
+                    <i class="bi bi-speedometer2"></i>
+                    <span>Resumen</span>
+                </a>
+            </li>
+
+            <!-- Sección de Datos -->
+            <div class="lucen-sidebar-cat">
+                <h4>Datos</h4>
+                <div class="lucen-separator"></div>
+            </div>
+            
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link">
+                    <i class="bi bi-graph-up"></i>
+                    <span>Ventas</span>
+                </a>
+            </li>
+            
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link">
+                    <i class="bi bi-people"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+            
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Productos</span>
+                </a>
+            </li>
+
+            <!-- Configuración -->
+            <div class="lucen-sidebar-cat">
+                <h4>Configuración</h4>
+                <div class="lucen-separator"></div>
+            </div>
+            
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link">
+                    <i class="bi bi-gear"></i>
+                    <span>Ajustes</span>
+                </a>
+            </li>
+            
+            <li class="lucen-nav-item">
+                <a href="#" class="lucen-nav-link">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        <!-- Barra superior -->
+        <div class="floating-container-top">
+
+          <div class="commandbar-floating commandbar-horizontal acrylic">
+              <div class="lucen-form-group flex-centered">
+                <div class="input-with-icon">
+                    <i class="bi bi-search right"></i>
+                    <input type="text" class="lucen-input right-icon" id="right-icon-input" placeholder="Buscar...">
+                </div>
+              </div>
+              
+              <div class="lucen-navbar-right">
+                  <button class="lucen-btn lucen-btn-icon">
+                      <i class="bi bi-bell"></i>
+                  </button>
+                  <button class="lucen-btn lucen-btn-icon">
+                      <i class="bi bi-question-circle"></i>
+                  </button>
+                  <div class="lucen-menubar-item">
+                      <div class="lucen-menubar-user">
+                          <div class="lucen-menubar-user-avatar">JS</div>
+                          <span>John Smith</span>
+                          <i class="bi bi-chevron-down lucen-menubar-arrow"></i>
+                      </div>
+                      <div class="lucen-menubar-dropdown">
+                          <a href="#" class="lucen-menubar-dropdown-item">
+                              <i class="bi bi-person"></i>
+                              <span>Perfil</span>
+                          </a>
+                          <a href="#" class="lucen-menubar-dropdown-item">
+                              <i class="bi bi-gear"></i>
+                              <span>Ajustes</span>
+                          </a>
+                          <div class="lucen-menubar-dropdown-divider"></div>
+                          <a href="#" class="lucen-menubar-dropdown-item">
+                              <i class="bi bi-box-arrow-right"></i>
+                              <span>Cerrar sesión</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- Contenido del dashboard -->
+        <section class="mt-4">
+            <h1 class="lucen-title">Resumen</h1>
+            <p class="lucen-subtitle">Vista general de las métricas clave</p>
+            
+            <!-- Tarjetas de estadísticas -->
+            <div class="cards-grid mb-4">
+                <div class="lucen-card stat-card">
+                    <div class="lucen-card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <i class="bi bi-currency-dollar stat-icon" style="color: var(--lucen-success)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stat-value">$12,345</div>
+                                <div class="stat-label">Ventas totales</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lucen-card stat-card">
+                    <div class="lucen-card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <i class="bi bi-cart-check stat-icon" style="color: var(--lucen-primary)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stat-value">1,234</div>
+                                <div class="stat-label">Órdenes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lucen-card stat-card">
+                    <div class="lucen-card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <i class="bi bi-people stat-icon" style="color: var(--lucen-info)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stat-value">567</div>
+                                <div class="stat-label">Clientes nuevos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lucen-card stat-card">
+                    <div class="lucen-card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <i class="bi bi-graph-up-arrow stat-icon" style="color: var(--lucen-warning)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="stat-value">24.5%</div>
+                                <div class="stat-label">Crecimiento</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gráficos principales -->
+            <div class="row gap-2 mb-4">
+                <div class="col-md">
+                    <div class="lucen-card">
+                        <div class="lucen-card-header">
+                            <h3>Ventas mensuales</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <div class="chart-container">
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md">
+                    <div class="lucen-card">
+                        <div class="lucen-card-header">
+                            <h3>Tráfico por fuente</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <div class="chart-container">
+                                <canvas id="trafficChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabla y gráfico pequeño -->
+            <div class="row gap-2">
+                <div class="col-md-6">
+                    <div class="lucen-card">
+                        <div class="lucen-card-header">
+                            <h3>Órdenes recientes</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <div class="lucen-table-responsive">
+                                <table class="lucen-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Cliente</th>
+                                            <th>Fecha</th>
+                                            <th>Total</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>John Doe</td>
+                                            <td>2023-05-15</td>
+                                            <td>$245.00</td>
+                                            <td><span class="lucen-badge lucen-badge-success">Completado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12344</td>
+                                            <td>Jane Smith</td>
+                                            <td>2023-05-14</td>
+                                            <td>$189.50</td>
+                                            <td><span class="lucen-badge lucen-badge-success">Completado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12343</td>
+                                            <td>Robert Johnson</td>
+                                            <td>2023-05-14</td>
+                                            <td>$320.75</td>
+                                            <td><span class="lucen-badge lucen-badge-warning">Procesando</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12342</td>
+                                            <td>Emily Davis</td>
+                                            <td>2023-05-13</td>
+                                            <td>$175.25</td>
+                                            <td><span class="lucen-badge lucen-badge-danger">Cancelado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#12341</td>
+                                            <td>Michael Wilson</td>
+                                            <td>2023-05-12</td>
+                                            <td>$420.00</td>
+                                            <td><span class="lucen-badge lucen-badge-success">Completado</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="lucen-card-footer">
+                            <a href="#" class="lucen-btn lucen-btn-outline">Ver todas las órdenes</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="lucen-card">
+                        <div class="lucen-card-header">
+                            <h3>Metas del mes</h3>
+                        </div>
+                        <div class="lucen-card-body">
+                            <div class="chart-container">
+                                <canvas id="goalsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <aside class="lucen-widgetbar acrylic-sf-lr" id="widgetbar">
+        <button class="lucen-btn lucen-btn-icon" id="widgetbarCollapse">
+            <i class="bi bi-chevron-double-right"></i>
+        </button>
+        <div class="lucen-widgetbar-header">
+            <h3>Widgets</h3>
+        </div>
+        
+        <div class="lucen-widgetbar-content">
+            <!-- Widget de notificaciones -->
+            <div class="lucen-widget">
+                <div class="lucen-widget-header">
+                    <h4>Notificaciones</h4>
+                    <i class="bi bi-bell"></i>
+                </div>
+                <div class="lucen-widget-body">
+                    <div class="notification-card">
+                        <div class="row gap-2 mb-2">
+                            <div class="col-sm">
+                                <i class="bi bi-check-circle" style="color: var(--lucen-success)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Nueva orden #12345 recibida</p>
+                                <p class="micro text-muted">Hace 5 minutos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row gap-2 mb-2">
+                            <div class="col-sm">
+                                <i class="bi bi-exclamation-triangle" style="color: var(--lucen-warning)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Stock bajo para producto XYZ</p>
+                                <p class="micro text-muted">Hace 2 horas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row gap-2">
+                            <div class="col-sm">
+                                <i class="bi bi-info-circle" style="color: var(--lucen-primary)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Actualización del sistema disponible</p>
+                                <p class="micro text-muted">Ayer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Widget de actividad reciente -->
+            <div class="lucen-widget">
+                <div class="lucen-widget-header">
+                    <h4>Actividad</h4>
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="lucen-widget-body">
+                    <div class="notification-card">
+                        <div class="row gap-2 mb-2">
+                            <div class="col-sm">
+                                <i class="bi bi-person-plus" style="color: var(--lucen-info)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Nuevo cliente registrado</p>
+                                <p class="micro text-muted">Hace 30 minutos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row gap-2 mb-2">
+                            <div class="col-sm">
+                                <i class="bi bi-cart-check" style="color: var(--lucen-success)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Orden #12344 completada</p>
+                                <p class="micro text-muted">Hace 1 hora</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row gap-2">
+                            <div class="col-sm">
+                                <i class="bi bi-envelope" style="color: var(--lucen-primary)"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="micro">Mensaje de soporte recibido</p>
+                                <p class="micro text-muted">Hace 3 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Widget de progreso -->
+            <div class="lucen-widget">
+                <div class="lucen-widget-header">
+                    <h4>Objetivos</h4>
+                    <i class="bi bi-graph-up"></i>
+                </div>
+                <div class="lucen-widget-body">
+                    <div class="mb-3">
+                        <p class="micro mb-1">Ventas mensuales</p>
+                        <div class="lucen-progress">
+                            <div class="lucen-progress-bar" style="width: 75%" data-progress="75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <p class="micro mb-1">Nuevos clientes</p>
+                        <div class="lucen-progress">
+                            <div class="lucen-progress-bar" style="width: 45%" data-progress="45%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="micro mb-1">Satisfacción</p>
+                        <div class="lucen-progress">
+                            <div class="lucen-progress-bar" style="width: 92%" data-progress="92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+
+<script>
+// Inicializar gráficos cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    // Gráfico de ventas mensuales (líneas)
+    const salesCtx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(salesCtx, {
+        type: 'line',
+        data: {
+            labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            datasets: [{
+                label: 'Ventas 2023',
+                data: [6500, 5900, 8000, 8100, 5600, 7500, 12300, 11000, 9500, 10500, 12000, 12500],
+                borderColor: 'var(--lucen-primary)',
+                backgroundColor: 'rgba(var(--lucen-primary-light-rgb), 0.1)',
+                tension: 0.4,
+                fill: true
+            }, {
+                label: 'Ventas 2022',
+                data: [5000, 4800, 6000, 7000, 4500, 5500, 8000, 8500, 7000, 9000, 9500, 10000],
+                borderColor: 'var(--lucen-text-tertiary)',
+                backgroundColor: 'rgba(var(--lucen-background-tertiary), 0.1)',
+                tension: 0.4,
+                borderDash: [5, 5],
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'var(--lucen-border-color)'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de tráfico por fuente (doughnut)
+    const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+    const trafficChart = new Chart(trafficCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Búsqueda', 'Directo', 'Redes', 'Email', 'Referidos'],
+            datasets: [{
+                data: [35, 25, 20, 15, 5],
+                backgroundColor: [
+                    'var(--lucen-primary)',
+                    'var(--lucen-success)',
+                    'var(--lucen-info)',
+                    'var(--lucen-warning)',
+                    'var(--lucen-danger)'
+                ],
+                borderColor: 'var(--lucen-background-primary)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                }
+            },
+            cutout: '70%'
+        }
+    });
+
+    // Gráfico de metas (radar)
+    const goalsCtx = document.getElementById('goalsChart').getContext('2d');
+    const goalsChart = new Chart(goalsCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Ventas', 'Clientes', 'Marketing', 'Soporte', 'Desarrollo', 'Finanzas'],
+            datasets: [{
+                label: 'Objetivos',
+                data: [85, 75, 90, 65, 80, 70],
+                backgroundColor: 'rgba(var(--lucen-primary-light-rgb), 0.2)',
+                borderColor: 'var(--lucen-primary)',
+                borderWidth: 2,
+                pointBackgroundColor: 'var(--lucen-primary)',
+                pointBorderColor: '#fff',
+                pointHoverRadius: 5
+            }, {
+                label: 'Actual',
+                data: [75, 65, 80, 55, 70, 60],
+                backgroundColor: 'rgba(var(--lucen-success-light-rgb), 0.2)',
+                borderColor: 'var(--lucen-success)',
+                borderWidth: 2,
+                pointBackgroundColor: 'var(--lucen-success)',
+                pointBorderColor: '#fff',
+                pointHoverRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: {
+                        color: 'var(--lucen-border-color)'
+                    },
+                    grid: {
+                        color: 'var(--lucen-border-color)'
+                    },
+                    pointLabels: {
+                        color: 'var(--lucen-text-primary)'
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            }
+        }
+    });
+    
+    // Actualizar gráficos cuando cambia el tema
+    document.documentElement.addEventListener('themeChanged', function() {
+        salesChart.update();
+        trafficChart.update();
+        goalsChart.update();
+    });
+});
+</script>
+</body>
+</html>

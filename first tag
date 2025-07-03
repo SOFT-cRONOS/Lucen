@@ -1,0 +1,32 @@
+Lucen-0.3.7
+
+![lucen-logo-color](https://github.com/user-attachments/assets/fda677e1-b3e6-4063-9167-f1ac757fa54a) 
+**Lucen UI**
+
+¡Estoy emocionado de anunciar el primer pre-release oficial de Lucen UI! (v0.3.7)
+
+**Un framework minimalista para interfaces web modernas**
+
+Lucen UI nace como una solución ligera y elegante para desarrolladores que buscan construir interfaces web con un diseño consistente y componentes optimizados. Este primer release marca un hito importante en mi compromiso por ofrecer herramientas de calidad para la comunidad de desarrollo.
+
+✨ Características principales:
+- **Diseño limpio y moderno** con enfoque en la usabilidad
+- **Sistema de temas con soporte** para modo claro/oscuro
+- **Colección de componentes** tarjetas, modales, formularios, etc.
+- **Efectos visuales** como acrílico y gradientes sutiles
+- **100% personalizable** mediante variables CSS
+- **Sin dependencias pesadas**.
+
+📦 Qué incluye esta versión:
+- Componentes básicos de UI listos para producción
+- Documentación completa con ejemplos interactivos
+- Sistema de estilos utilitarios para un desarrollo ágil
+- Soporte para temas dinámicos y preferencias del sistema
+
+📚 Documentación completa: en la web
+
+Este es solo el comienzo. ¡Esperamos tus comentarios y contribuciones para hacer de Lucen UI una herramienta aún mejor!
+
+🔮 **Próximamente:** Más componentes, mejoras de accesibilidad y temas personalizados.
+
+

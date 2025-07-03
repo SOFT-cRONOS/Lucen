@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+/* Gradient bottom right to top left*/
+.gradient-background {
+    background: linear-gradient(307deg,
+        var(--lucen-tertiary-light),
+        var(--lucen-background-secondary),
+        var(--lucen-primary-ulight),
+        var(--lucen-background-secondary),
+        var(--lucen-tertiary-ulight));
+    background-size: 300% 300%;
+    animation: gradient-animation 40s ease infinite;
+
+    &-statick{
+        background: linear-gradient(307deg,
+            var(--lucen-tertiary-mlight) 0%,
+            var(--lucen-tertiary-mlight) 10%,
+            var(--lucen-background-secondary) 20%,
+            var(--lucen-background-secondary) 80%,
+            var(--lucen-primary-ulight) 90%,
+            var(--lucen-primary-ulight) 100%
+        );
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+
+
+}
+

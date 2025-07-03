@@ -1,0 +1,200 @@
+@use 'variables' as *;
+
+/* Acordeón básico */
+.lucen-accordion {
+    border-radius: $lucen-border-radius-lg;
+    overflow: hidden;
+    box-shadow: $lucen-shadow-sm;
+    margin-bottom: $lucen-spacing-md;
+}
+
+.lucen-accordion-item {
+    border-bottom: 1px solid $lucen-border-color;
+    background-color: $lucen-background-primary;
+}
+
+.lucen-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.lucen-accordion-header {
+    padding: $lucen-spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: $lucen-transition;
+    background-color: $lucen-background-primary;
+}
+
+.lucen-accordion-header:hover {
+    background-color: $lucen-background-secondary;
+}
+
+.lucen-accordion-header.active {
+    background-color: $lucen-background-tertiary;
+}
+
+.lucen-accordion-title {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: $lucen-spacing-sm;
+}
+
+.lucen-accordion-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lucen-accordion-header.active .lucen-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.lucen-accordion-content {
+    padding: 0 $lucen-spacing-md;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+    // background-color: $lucen-background-primary;
+}
+
+.lucen-accordion-header.active + .lucen-accordion-content {
+    padding: $lucen-spacing-md;
+    max-height: 500px;
+}
+
+/* Variante Fluent (con efecto acrílico) */
+.fluent-accordion .lucen-accordion-item {
+    background-color: rgba($lucen-background-primary-rgb, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba($lucen-border-color-rgb 0.2);
+    margin-bottom: $lucen-spacing-sm;
+    border-radius: $lucen-border-radius;
+}
+
+.fluent-accordion .lucen-accordion-header {
+    background-color: transparent;
+}
+
+.fluent-accordion .lucen-accordion-header:hover {
+    background-color: rgba($lucen-background-tertiary-rgb, 0.1);
+}
+
+.fluent-accordion .lucen-accordion-header.active {
+    background-color: rgba($lucen-background-tertiary-rgb, 0.2);
+}
+
+/* Variante compacta */
+.compact-accordion .lucen-accordion-header {
+    padding: $lucen-spacing-sm $lucen-spacing-md;
+}
+
+.compact-accordion .lucen-accordion-header .lucen-accordion-title {
+    font-size: 0.7rem;
+}
+
+.compact-accordion .lucen-accordion-content {
+    padding: 0 $lucen-spacing-md;
+    font-size: 0.9rem;
+}
+
+
+
+.compact-accordion .lucen-accordion-header.active + .lucen-accordion-content {
+    padding: $lucen-spacing-sm $lucen-spacing-md;
+}
+
+/* Variante con borde */
+.lucen-accordion.bordered-accordion {
+    box-shadow: none;
+}
+.bordered-accordion .lucen-accordion-item {
+    border: 1px solid $lucen-border-color;
+    border-radius: $lucen-border-radius-lg;
+    margin-bottom: $lucen-spacing-sm;
+}
+
+.bordered-accordion .lucen-accordion-header {
+    border-radius: $lucen-border-radius-lg $lucen-border-radius-lg 0 0;
+}
+
+.bordered-accordion .lucen-accordion-header.active {
+    border-radius: $lucen-border-radius-lg $lucen-border-radius-lg 0 0;
+}
+
+/* Variante con iconos personalizados */
+.icon-accordion .lucen-accordion-icon {
+    color: $lucen-primary;
+}
+
+
+/*variante flat*/
+.lucen-flat-accordion {
+    box-shadow: none;
+}
+.lucen-flat-accordion .lucen-accordion-item {
+    background: transparent!important;
+}
+.lucen-flat-accordion .lucen-accordion-header, .lucen-flat-accordion .lucen-accordion-content  {
+    background-color: $lucen-background-primary;
+}
+
+.lucen-flat-accordion .lucen-accordion-content  {
+    margin-bottom: 0;
+}
+
+.lucen-flat-accordion .lucen-accordion-header.active {
+    background-color: $lucen-background-primary;
+}
+
+/* Variante de paneles múltiples pendiente */
+.multi-panel-accordion .lucen-accordion-header {
+    background-color: $lucen-background-secondary;
+}
+
+.multi-panel-accordion .lucen-accordion-header.active {
+    background-color: $lucen-primary;
+    color: $lucen-text-white;
+}
+
+.multi-panel-accordion .lucen-accordion-header.active .lucen-accordion-icon {
+    color: $lucen-text-white;
+}
+
+.multi-panel-accordion .accordion-host.active {
+    max-height: fit-content!important;
+}
+/* Optimizaciones para touch */
+@media (pointer: coarse) {
+    .lucen-accordion-header {
+        padding: $lucen-spacing-md $lucen-spacing-lg;
+        min-height: 48px;
+    }
+    
+    .lucen-accordion-title {
+        font-size: 1.1rem;
+    }
+    
+    .touch-optimized .lucen-accordion-header {
+        padding: $lucen-spacing-lg;
+    }
+}
+
+/* Ejemplos de contenido para acordeones */
+.accordion-content-sample {
+    display: flex;
+    gap: $lucen-spacing-md;
+    align-items: flex-start;
+}
+
+.accordion-content-sample img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: $lucen-border-radius;
+}
+
+.accordion-content-sample p {
+    margin: 0;
+}

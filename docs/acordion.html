@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lucen UI - Acordeones</title>
+        
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Code content styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+
+    <!-- lucen UI CSS -->
+    <link rel="stylesheet" href="../dist/lucen-ui.css">
+    
+    <style>
+        .acrilico {
+            background-image: url(assets/fluent_background1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+ 
+    </style>
+</head>
+<body class="lucen-body">
+      
+<div class="lucen-container col flex-centered">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <main class="lucen-main st-app-main r-widget">
+        
+        <!-- Sección de Acordeones -->
+        <section>
+            <h1 class="component-title">Acordeones</h1>
+            <p class="lucen-subtitle">Componentes plegables para organizar contenido en secciones colapsables.</p>
+            
+                <!-- Acordeón básico -->
+                <div class="demo-container">
+                    <h3>Acordeón Básico</h3>
+                    <div class="lucen-accordion" id="basicAccordion">
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <span>¿Qué es lucen UI?</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>lucen UI es un framework basado en Bootstrap que proporciona componentes con estilo minimalista, usando solo HTML, CSS y JS.</p>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <span>¿Cómo se usa?</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Simplemente incluye los archivos CSS y JS de lucen UI en tu proyecto. Todos los componentes están listos para usar con las clases proporcionadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion">
+                            <div class="lucen-accordion-item">
+                                <div class="lucen-accordion-header">
+                                    <div class="lucen-accordion-title">
+                                        <i class="bi bi-info-circle"></i>
+                                        <span>Título del panel</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido del panel aquí...</p>
+                                </div>
+                            </div>
+                            <!-- Más items -->
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- Acordeón Acrilico -->
+                <div class="demo-container acrilico">
+                    <h3 class="text-light">Acordeón Acrílico</h3>
+                    <div class="lucen-accordion fluent-accordion " id="fluentAccordion">
+                        <div class="lucen-accordion-item text-primary">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-star"></i>
+                                    <span>Características Principales</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <ul>
+                                    <li>Diseño minimalista</li>
+                                    <li>Efectos acrílicos</li>
+                                    <li>Animaciones fluidas</li>
+                                    <li>Optimizado para touch</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item text-primary">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-collection"></i>
+                                    <span>Componentes Incluidos</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <div class="accordion-content-sample">
+                                    <img src="https://via.placeholder.com/100" alt="Placeholder">
+                                    <div>
+                                        <p>lucen UI incluye una variedad de componentes listos para usar:</p>
+                                        <ul>
+                                            <li>Acordeones</li>
+                                            <li>Modales</li>
+                                            <li>Barras de comandos</li>
+                                            <li>Elementos de formulario</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion fluent-accordion acrylic">
+                            <div class="lucen-accordion-item">
+                                <div class="lucen-accordion-header">
+                                    <div class="lucen-accordion-title">
+                                        <i class="bi bi-star"></i>
+                                        <span>Título del panel</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido con efecto acrílico...</p>
+                                </div>
+                            </div>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- Acordeón compacto -->
+                <div class="demo-container">
+                    <h3>Acordeón Compacto</h3>
+                    <div class="lucen-accordion compact-accordion" id="compactAccordion">
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <span>Configuración de Cuenta</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Opciones para gestionar tu cuenta de usuario.</p>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <span>Preferencias</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Ajustes de visualización y comportamiento.</p>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <span>Notificaciones</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Configura cómo recibir notificaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion compact-accordion">
+                            <div class="lucen-accordion-item">
+                                <div class="lucen-accordion-header">
+                                    <div class="lucen-accordion-title">
+                                        <span>Título compacto</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido compacto...</p>
+                                </div>
+                            </div>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- Acordeón con colores o bordes -->
+                <div class="demo-container">
+                    <h3>Acordeón con Colores o Bordes</h3>
+                    <div class="lucen-accordion bordered-accordion" id="borderedAccordion">
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header lucen-bg-primary text-light">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <span>Documentación</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Guías completas y ejemplos de uso para todos los componentes.</p>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-code-square"></i>
+                                    <span>Ejemplos de Código</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Fragmentos de código listos para copiar y pegar en tus proyectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion bordered-accordion" id="Accordion">
+                            <div class="lucen-accordion-item">
+                                <!-- Quitar "lucen-bg-primary text-light" para el color -->
+                                 <div class="lucen-accordion-header lucen-bg-primary text-light">
+                                    <div class="lucen-accordion-title">
+                                        <span>Título con color y borde</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido con bordes definidos...</p>
+                                </div>
+                            </div>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- Acordeón con iconos -->
+                <div class="demo-container">
+                    <h3>Acordeón con Iconos</h3>
+                    <div class="lucen-accordion icon-accordion" id="iconAccordion">
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-palette gradient-icon"></i>
+                                    <span>Personalización</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Cambia colores, fuentes y otros aspectos visuales.</p>
+                            </div>
+                        </div>
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-sliders"></i>
+                                    <span>Ajustes</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Configura el comportamiento de los componentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion icon-accordion">
+                            <div class="lucen-accordion-item">
+                                <div class="lucen-accordion-header">
+                                    <div class="lucen-accordion-title">
+                                        <i class="bi bi-palette"></i>
+                                        <span>Título con icono</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido con iconos destacados...</p>
+                                </div>
+                            </div>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+                
+                <!-- Acordeón flat -->
+                <div class="demo-container">
+                    <h3>Acordeón plano</h3>
+                    <div class="lucen-accordion lucen-flat-accordion" id="multiPanelAccordion">
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header .accordion-host">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-shield-check"></i>
+                                    <span>Seguridad</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Gestiona cómo recibes las notificaciones.</p>
+                            </div>
+                        </div>
+
+                        <div class="lucen-accordion-item">
+                            <div class="lucen-accordion-header">
+                                <div class="lucen-accordion-title">
+                                    <i class="bi bi-bell"></i>
+                                    <span>Notificaciones</span>
+                                </div>
+                                <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                            </div>
+                            <div class="lucen-accordion-content">
+                                <p>Gestiona cómo recibes las notificaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Código -->
+                    <pre class="lucen-code-block">
+                        <code data-code='
+                        <div class="lucen-accordion multi-panel-accordion">
+                            <div class="lucen-accordion-item">
+                                <div class="lucen-accordion-header">
+                                    <div class="lucen-accordion-title">
+                                        <i class="bi bi-shield-check"></i>
+                                        <span>Panel destacado</span>
+                                    </div>
+                                    <i class="bi bi-chevron-down lucen-accordion-icon"></i>
+                                </div>
+                                <div class="lucen-accordion-content">
+                                    <p>Contenido con estilo destacado...</p>
+                                </div>
+                            </div>
+                        </div>
+                        ' class="code"></code>
+                    </pre>
+                </div>
+        </section>
+    </main>
+
+    <!-- Widget Bar -->
+    <div id="widgetbar-container"></div>
+</div>
+
+<!-- Code content scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+<!-- lucen UI JS -->
+<script src="../dist/lucen-ui.min.js"></script>
+<script src="assets/script.js"></script>
+<script>
+    // Inicialización de componentes
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll();
+        styeCode();
+        
+        // Inicializar acordeones
+        initAccordions();
+    });
+    
+    // Función para inicializar todos los acordeones
+    function initAccordions() {
+        document.querySelectorAll('.lucen-accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                const accordionContent = header.nextElementSibling;
+                const accordion = header.closest('.lucen-accordion');
+                
+                // Cerrar otros items si no es un acordeón de paneles múltiples
+                if (!accordion.classList.contains('multi-panel-accordion')) {
+                    accordion.querySelectorAll('.lucen-accordion-item').forEach(item => {
+                        if (item !== accordionItem) {
+                            item.querySelector('.lucen-accordion-header').classList.remove('active');
+                            item.querySelector('.lucen-accordion-content').style.maxHeight = '0';
+                            item.querySelector('.lucen-accordion-content').classList.remove('mb-1');
+                        }
+                    });
+                }
+                
+                // Alternar el item clickeado
+                header.classList.toggle('active');
+                if (header.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                    if (accordion.classList.contains('lucen-flat-accordion')) {
+                        accordionContent.classList.add('mb-1');
+                    }
+                } else {
+                    accordionContent.style.maxHeight = '0';
+                    if (accordion.classList.contains('lucen-flat-accordion')) {
+                        accordionContent.classList.remove('mb-1');
+                    }
+                }
+            });
+        });
+        
+        // Optimización para touch
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            document.querySelectorAll('.lucen-accordion-header').forEach(header => {
+                // header.style.padding = 'var(--lucen-spacing-md) var(--lucen-spacing-lg)';
+                header.style.minHeight = '48px';
+            });
+        }
+    }
+</script>
+    
+</body> 
+</html>
