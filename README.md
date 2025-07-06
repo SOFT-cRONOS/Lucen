@@ -1,6 +1,15 @@
 # ℹ️ ATENTION!
 Work in progress! Lucen Framework it's not finished.
 
+## Para probarlo:
+Linkear el cdn
+
+      https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.css
+
+y el js
+
+      https://cdn.jsdelivr.net/gh/SOFT-cRONOS/Lucen@v0.3.7/dist/lucen-ui.min.js
+
 ## 📌 Lucen Framework
 
 Lucen Framework es un sistema de estilos minimalista basado en el lenguaje visual de Fluent Design. Diseñado para aplicaciones web elegantes, ligeras y responsivas.
